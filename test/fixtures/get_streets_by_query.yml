@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/checkout/getStreetsByQuery?street=%D0%BC%D0%B0%D1%81&placeId=0c5b2444-70a0-4932-980c-b4dc0d3f02b5&ticket=valid-ticket
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message:
+    headers:
+      date:
+      - Wed, 29 Jan 2014 21:44:28 GMT
+      server:
+      - Apache/2.2.22 (Ubuntu)
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json;charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJzdWdnZXN0aW9ucyI6W3siaWQiOiI5NjA5NzJlOC00OGJiLTQ4MzctYjBl
+        ZS1lZTAzNDc5MzFiNzMiLCJuYW1lIjoi0JzQsNGB0LvQvtCy0LrQsCDQktC1
+        0YDRhdC9LiIsInR5cGUiOiLRg9C7In0seyJpZCI6ImFkNGI5OWYwLTMzZGEt
+        NDY2MS1hYTI5LTA1NzU1N2NmNDE0NyIsIm5hbWUiOiLQnNCw0YHQu9C+0LLQ
+        utCwINCd0LjQttC9LiIsInR5cGUiOiLRg9C7In0seyJpZCI6IjBiYzBlMTg3
+        LWM1NWItNGVmOS1iZDBlLTZjMjM2ODNhMTI3MCIsIm5hbWUiOiLQnNCw0YHR
+        gtC10YDQutC+0LLQsCIsInR5cGUiOiLRg9C7In0seyJpZCI6IjJiNDUzZTNj
+        LWQ5MDgtNDYwOC1iODFjLWEzMTRhNjg3YmVlMyIsIm5hbWUiOiLQnNCw0YHR
+        gtC10YDQvtCy0LDRjyIsInR5cGUiOiLRg9C7In1dfQ==
+    http_version:
+  recorded_at: Wed, 29 Jan 2014 21:46:15 GMT
+recorded_with: VCR 2.8.0

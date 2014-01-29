@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/checkout/getPlacesByQuery?place=%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&ticket=valid-ticket
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message:
+    headers:
+      date:
+      - Tue, 28 Jan 2014 23:54:01 GMT
+      server:
+      - Apache/2.2.22 (Ubuntu)
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json;charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJzdWdnZXN0aW9ucyI6W3siaWQiOiIwYzViMjQ0NC03MGEwLTQ5MzItOTgw
+        Yy1iNGRjMGQzZjAyYjUiLCJuYW1lIjoi0JzQvtGB0LrQstCwIiwiZnVsbE5h
+        bWUiOiLQsy4g0JzQvtGB0LrQstCwIn0seyJpZCI6IjM2MDVlNjYwLWU5MGUt
+        NDdkMy1iNThlLTA2OGYyNGU2ODE0NSIsIm5hbWUiOiLQnNC+0YHQutCy0LAi
+        LCJmdWxsTmFtZSI6ItC0LiDQnNC+0YHQutCy0LAgKNCf0LXQvdC+0LLRgdC6
+        0LjQuSDRgNCw0LnQvtC9LCDQotCy0LXRgNGB0LrQsNGPINC+0LHQu9Cw0YHR
+        gtGMKSJ9LHsiaWQiOiJmMWM3MmI5ZC1hMmQ3LTQ1YjctYjlmNS0yMjIyYzEy
+        ZDUxNjQiLCJuYW1lIjoi0JzQvtGB0LrQstCwIiwiZnVsbE5hbWUiOiLQtC4g
+        0JzQvtGB0LrQstCwICjQktC10YDRhdC+0YjQuNC20LXQvNGB0LrQuNC5INGA
+        0LDQudC+0L0sINCa0LjRgNC+0LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCki
+        fSx7ImlkIjoiMjZhMjVlZmEtNGY2My00ZDRiLThkYjYtZGZjMjljZGFhYjI0
+        IiwibmFtZSI6ItCc0L7RgdC60LLQsCIsImZ1bGxOYW1lIjoi0LQuINCc0L7R
+        gdC60LLQsCAo0J/QvtGA0YXQvtCy0YHQutC40Lkg0YDQsNC50L7QvSwg0J/R
+        gdC60L7QstGB0LrQsNGPINC+0LHQu9Cw0YHRgtGMKSJ9XX0=
+    http_version:
+  recorded_at: Tue, 28 Jan 2014 23:55:46 GMT
+recorded_with: VCR 2.8.0
