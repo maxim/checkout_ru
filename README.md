@@ -1,6 +1,6 @@
 # CheckoutRu
 
-TODO: Write a gem description
+Thin ruby client for checkout.ru integration.
 
 ## Installation
 
@@ -18,7 +18,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+session = CheckoutRu::Session.initiate
+places = session.get_places_by_query('Москва')
+places[0].name # => "г. Москва"
+```
 
 ## Contributing
 
