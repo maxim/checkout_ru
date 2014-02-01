@@ -59,8 +59,8 @@ order = CheckoutRu::Order.new(
   payment_method: 'cash'
 )
 
-CheckoutRu.create_order(order)
-# => '{"order":{"id":75},"delivery":{"id":2,"serviceName":"PickPoint"}}'
+CheckoutRu.create_order(order) # => <Hashie::Mash>, structure:
+# {"order":{"id":75},"delivery":{"id":2,"service_name":"PickPoint"}}
 ```
 
 ## Contributing
