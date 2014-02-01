@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/order/statushistory/777?apiKey=valid-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message:
+    headers:
+      date:
+      - Sat, 01 Feb 2014 19:39:16 GMT
+      server:
+      - Apache/2.2.22 (Ubuntu)
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json;charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewoib3JkZXIiOnsKImlkIjoiNzUiLCAKImRhdGUiOiIxLjAyLjIwMTQiLCAK
+        InRvdGFsQ29zdCI6MTcyNC40MSwgCiJhcHByb3hpbWF0ZURlbGl2ZXJ5RGF0
+        ZSI6bnVsbH0sInVzZXIiOnsKImZ1bGxuYW1lIjoi0J/QtdGC0Y8g0J/Rg9C/
+        0LrQuNC9IiwgCiJhZGRyZXNzIjp7CiJwb3N0aW5kZXgiOm51bGwsIAoicGxh
+        Y2UiOiLQsy4g0JzQvtGB0LrQstCwIiwKInN0cmVldCI6IiIsCiJob3VzZSI6
+        bnVsbCwgCiJob3VzaW5nIjpudWxsLCAKImJ1aWxkaW5nIjpudWxsLCAKImFw
+        cGFydG1lbnQiOm51bGx9fSwiZGVsaXZlcnlOYW1lIjoiUGlja1BvaW50Iiwg
+        ImRlbGl2ZXJ5SGlzdG9yeSIgOiBbCgpdCn0=
+    http_version:
+  recorded_at: Sat, 01 Feb 2014 19:40:27 GMT
+recorded_with: VCR 2.8.0
