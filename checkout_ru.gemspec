@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["max@bitsonnet.com"]
   spec.summary       = %q{Ruby client for checkout.ru}
   spec.description   = %q{Ruby client for checkout.ru.}
-  spec.homepage      = ''
+  spec.homepage      = 'http://github.com/maxim/checkout_ru'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
