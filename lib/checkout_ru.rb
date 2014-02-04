@@ -15,7 +15,7 @@ module CheckoutRu
   Error = Class.new(Faraday::Error::ClientError)
 
   class << self
-    attr_accessor :api_key, :adapter
+    attr_accessor :service_url, :api_key, :adapter
 
     def get_ticket(options = {})
       api_key = options[:api_key] || api_key
@@ -69,7 +69,9 @@ module CheckoutRu
     end
 
     def build_connection(options = {})
-      Faraday.new(:url => options[:url] || SERVICE_URL) do |faraday|
+      url = options[:url] || service_url || SERVICE_URL
+
+      Faraday.new(:url => url) do |faraday|
         faraday.request :multi_json
         faraday.response :raise_error
         faraday.response :multi_json
