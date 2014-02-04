@@ -26,7 +26,6 @@ module CheckoutRu
       api_key = options[:api_key] || api_key
       make_request '/service/order/create',
         :via    => :post,
-        :mash   => true,
         :params => { :api_key => api_key, :order => order }
     end
 
@@ -34,7 +33,6 @@ module CheckoutRu
       api_key = options[:api_key] || api_key
       make_request "/service/order/#{remote_id}",
         :via => :post,
-        :mash => true,
         :params => { :api_key => api_key, :order => order }
     end
 
