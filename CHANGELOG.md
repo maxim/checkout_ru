@@ -1,3 +1,3 @@
-    ## 0.0.2
+## 0.0.2
 
-    - Fix Faraday dependency issue
+- Fix Faraday dependency issue
