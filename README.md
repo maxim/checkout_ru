@@ -25,6 +25,9 @@ session = CheckoutRu::Session.initiate
 places = session.get_places_by_query(place: 'Москва')
 places[0].name # => "г. Москва"
 
+# Pass request options to any request
+places = session.get_places_by_query({place: 'Москва'}, request: {timeout: 5})
+
 order = CheckoutRu::Order.new(
   goods: [
     CheckoutRu::Item.new(
