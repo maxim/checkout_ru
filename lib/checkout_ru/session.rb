@@ -7,40 +7,39 @@ module CheckoutRu
       end
     end
 
-    def initialize(ticket, options = {})
+    def initialize(ticket)
       @ticket = ticket
       @conn = CheckoutRu.build_connection
     end
 
-    def get_places_by_query(options = {})
-      get('checkout/getPlacesByQuery', options).suggestions
+    def get_places_by_query(params = {}, options = {})
+      get('getPlacesByQuery', params, options).suggestions
     end
 
-    def calculation(options = {})
-      params = options.dup
-      get('checkout/calculation', params)
+    def calculation(params = {}, options = {})
+      get('calculation', params, options)
     end
 
-    def get_streets_by_query(options = {})
-      params = options.dup
-      get('checkout/getStreetsByQuery', params).suggestions
+    def get_streets_by_query(params = {}, options = {})
+      get('getStreetsByQuery', params, options).suggestions
     end
 
-    def get_postal_code_by_address(options = {})
-      params = options.dup
-      get('checkout/getPostalCodeByAddress', params).postindex
+    def get_postal_code_by_address(params = {}, options = {})
+      get('getPostalCodeByAddress', params, options).postindex
     end
 
-    def get_place_by_postal_code(options = {})
-      get('checkout/getPlaceByPostalCode', options)
+    def get_place_by_postal_code(params = {}, options = {})
+      get('getPlaceByPostalCode', params, options)
     end
 
     private
-    def get(service, params = {})
-      CheckoutRu.make_request \
-        "/service/#{service}",
+    def get(service, params = {}, options = {})
+      args = {
         :connection => @conn,
         :params => params.merge(:ticket => @ticket)
+      }.merge(options)
+
+      CheckoutRu.make_request "/service/checkout/#{service}", args
     end
   end
 end

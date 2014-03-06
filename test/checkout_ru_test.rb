@@ -39,7 +39,7 @@ class CheckoutRuTest < MiniTest::Test
 
   def test_configured_api_key_is_used_to_make_request
     CheckoutRu.stubs(:api_key).returns('foobar')
-    CheckoutRu.expects(:make_request).with("/service/login/ticket/foobar").
+    CheckoutRu.expects(:make_request).with('/service/login/ticket/foobar', {}).
       once.returns({})
     CheckoutRu.get_ticket
   end

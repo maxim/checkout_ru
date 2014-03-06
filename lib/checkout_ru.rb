@@ -18,52 +18,60 @@ module CheckoutRu
     attr_accessor :service_url, :api_key, :adapter
 
     def get_ticket(options = {})
-      key = options[:api_key] || api_key
-      make_request("/service/login/ticket/#{key}")['ticket']
+      key = options.delete(:api_key) || api_key
+      make_request("/service/login/ticket/#{key}", options)['ticket']
     end
 
     def create_order(order, options = {})
-      make_request_with_key '/service/order/create',
+      args = {
         :via    => :post,
-        :params => { :order => order },
-        :api_key => options[:api_key]
+        :params => { :order => order }
+      }.merge(options)
+
+      make_request_with_key '/service/order/create', args
     end
 
     def update_order(remote_id, order, options = {})
-      make_request_with_key "/service/order/#{remote_id}",
+      args = {
         :via => :post,
-        :params => { :order => order },
-        :api_key => options[:api_key]
+        :params => { :order => order }
+      }.merge(options)
+
+      make_request_with_key "/service/order/#{remote_id}", args
     end
 
     def status(remote_id, status, options = {})
+      args = {
+        :via => :post,
+        :params => { :status => parse_status(status) }
+      }.merge(options)
+
+      make_request_with_key "/service/order/status/#{remote_id}", args
+    end
+
+    def status_history(order_id, options = {})
+      resp = make_request_with_key "/service/order/statushistory/#{order_id}",
+        options
+      resp.order.date = Date.parse(resp.order.date)
+      resp
+    end
+
+    def parse_status(status)
       status_map = Order::Status::MAP
 
-      status_string = if status.is_a?(Symbol)
-        unless status_map.keys.include?(status)
+      if status.is_a?(Symbol)
+        unless Order::Status::MAP.keys.include?(status)
           raise Error, "Invalid order status: #{status}"
         end
 
-        status_map[status]
+        Order::Status::MAP[status]
       else
-        unless status_map.values.include?(status)
+        unless Order::Status::MAP.values.include?(status)
           raise Error, "Invalid order status: #{status}"
         end
 
         status
       end
-
-      make_request_with_key "/service/order/status/#{remote_id}",
-        :via => :post,
-        :params => { :status => status_string },
-        :api_key => options[:api_key]
-    end
-
-    def status_history(order_id, options = {})
-      resp = make_request_with_key "/service/order/statushistory/#{order_id}",
-          :api_key => options[:api_key]
-      resp.order.date = Date.parse(resp.order.date)
-      resp
     end
 
     def make_request_with_key(service, options = {})
@@ -73,14 +81,17 @@ module CheckoutRu
     end
 
     def make_request(service, options = {})
-      conn   = options[:connection] || build_connection
-      method = options[:via]        || :get
-      params = options[:params].dup if options[:params]
+      headers      = { 'Accept' => 'application/json' }
+      conn         = options[:connection] || build_connection
+      method       = options[:via]        || :get
+      request_opts = options[:request]    || {}
+      params       = options[:params].dup if options[:params]
+
       camelize_keys!(params)
 
-      body = conn.public_send(method, service, params,
-        { 'Accept' => 'application/json' }
-      ).body
+      body = conn.public_send(method, service, params, headers) do |req|
+        req.options.update(request_opts) unless request_opts.empty?
+      end.body
 
       underscore_keys!(body)
 

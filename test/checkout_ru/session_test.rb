@@ -5,6 +5,13 @@ class CheckoutRu::SessionTest < MiniTest::Test
     @session = CheckoutRu::Session.new('valid-ticket')
   end
 
+  def test_request_options_are_passed_through_to_faraday
+    CheckoutRu.expects(:make_request).once.with(
+      '/service/checkout/calculation', has_entry(:request, { :timeout => 5 })
+    )
+    @session.calculation({}, :request => { :timeout => 5 })
+  end
+
   def test_get_places_by_query
     VCR.use_cassette('get_places_by_query') do
       places = @session.get_places_by_query(:place => 'москва')
