@@ -22,7 +22,7 @@ Or install it yourself as:
 CheckoutRu.api_key = 'my-api-key'
 
 session = CheckoutRu::Session.initiate
-places = session.get_places_by_query('Москва')
+places = session.get_places_by_query(place: 'Москва')
 places[0].name # => "г. Москва"
 
 order = CheckoutRu::Order.new(
