@@ -37,6 +37,13 @@ class CheckoutRuTest < MiniTest::Test
     )
   end
 
+  def test_configured_api_key_is_used_to_make_request
+    CheckoutRu.stubs(:api_key).returns('foobar')
+    CheckoutRu.expects(:make_request).with("/service/login/ticket/foobar").
+      once.returns({})
+    CheckoutRu.get_ticket
+  end
+
   def test_get_ticket_returns_valid_ticket
     VCR.use_cassette('get_ticket') do
       assert_equal 'valid-ticket',
@@ -46,7 +53,7 @@ class CheckoutRuTest < MiniTest::Test
 
   def test_get_ticket_with_invalid_api_key_raises_invalid_key_error
     VCR.use_cassette('get_ticket_invalid_api_key') do
-      assert_raises CheckoutRu::Error do
+      assert_raises Faraday::Error::ClientError do
         CheckoutRu.get_ticket(:api_key => 'invalid-api-key')
       end
     end

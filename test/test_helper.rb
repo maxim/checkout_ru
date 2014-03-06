@@ -1,5 +1,6 @@
 require 'checkout_ru'
 require 'minitest/autorun'
+require 'mocha/mini_test'
 require 'vcr'
 
 VCR.configure do |c|

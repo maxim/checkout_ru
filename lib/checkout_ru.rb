@@ -18,26 +18,25 @@ module CheckoutRu
     attr_accessor :service_url, :api_key, :adapter
 
     def get_ticket(options = {})
-      api_key = options[:api_key] || api_key
-      make_request("/service/login/ticket/#{api_key}")['ticket']
+      key = options[:api_key] || api_key
+      make_request("/service/login/ticket/#{key}")['ticket']
     end
 
     def create_order(order, options = {})
-      api_key = options[:api_key] || api_key
-      make_request '/service/order/create',
+      make_request_with_key '/service/order/create',
         :via    => :post,
-        :params => { :api_key => api_key, :order => order }
+        :params => { :order => order },
+        :api_key => options[:api_key]
     end
 
     def update_order(remote_id, order, options = {})
-      api_key = options[:api_key] || api_key
-      make_request "/service/order/#{remote_id}",
+      make_request_with_key "/service/order/#{remote_id}",
         :via => :post,
-        :params => { :api_key => api_key, :order => order }
+        :params => { :order => order },
+        :api_key => options[:api_key]
     end
 
     def status(remote_id, status, options = {})
-      api_key = options[:api_key] || api_key
       status_map = Order::Status::MAP
 
       status_string = if status.is_a?(Symbol)
@@ -54,29 +53,23 @@ module CheckoutRu
         status
       end
 
-      make_request "/service/order/status/#{remote_id}",
+      make_request_with_key "/service/order/status/#{remote_id}",
         :via => :post,
-        :params => { :api_key => api_key, :status => status_string }
+        :params => { :status => status_string },
+        :api_key => options[:api_key]
     end
 
     def status_history(order_id, options = {})
-      api_key = options[:api_key] || api_key
-      response = make_request "/service/order/statushistory/#{order_id}",
-        :params => { :api_key => api_key }
-
-      response.order.date = Date.parse(response.order.date)
-      response
+      resp = make_request_with_key "/service/order/statushistory/#{order_id}",
+          :api_key => options[:api_key]
+      resp.order.date = Date.parse(resp.order.date)
+      resp
     end
 
-    def build_connection(options = {})
-      url = options[:url] || service_url || SERVICE_URL
-
-      Faraday.new(:url => url) do |faraday|
-        faraday.request :multi_json
-        faraday.response :raise_error
-        faraday.response :multi_json
-        faraday.adapter options[:adapter] || adapter || Faraday.default_adapter
-      end
+    def make_request_with_key(service, options = {})
+      key = options.delete(:api_key) || api_key
+      params = (options[:params] || {}).merge(:api_key => key)
+      make_request service, options.merge(:params => params)
     end
 
     def make_request(service, options = {})
@@ -99,16 +92,16 @@ module CheckoutRu
       else
         body
       end
+    end
 
-    rescue Faraday::Error::ClientError => e
-      begin
-        doc = Nokogiri::HTML(e.response[:body])
-        doc.css('script, link').each(&:remove)
-        msg = doc.css('body h1').text
-      rescue
-        raise e
-      else
-        raise Error, msg
+    def build_connection(options = {})
+      url = options[:url] || service_url || SERVICE_URL
+
+      Faraday.new(:url => url) do |faraday|
+        faraday.request :multi_json
+        faraday.response :raise_error
+        faraday.response :multi_json
+        faraday.adapter options[:adapter] || adapter || Faraday.default_adapter
       end
     end
 
