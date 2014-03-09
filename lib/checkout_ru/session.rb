@@ -35,12 +35,17 @@ module CheckoutRu
 
     private
     def get(service, params = {}, options = {})
+      session_renewal_count ||= 0
+      session_renewal_count += 1
       args = {:params => params.merge(:ticket => @ticket)}.merge(options)
       args[:connection] ||= build_connection
       CheckoutRu.make_request "/service/checkout/#{service}", args
     rescue Faraday::Error::ClientError => e
-      if CheckoutRu.auto_renew_session && expired_ticket_exception?(e)
+      if CheckoutRu.auto_renew_session &&
+        session_renewal_count < 2 && expired_ticket_exception?(e)
+
         @ticket = CheckoutRu.get_ticket
+        retry
       else
         raise
       end
