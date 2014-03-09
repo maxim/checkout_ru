@@ -11,11 +11,14 @@ require 'checkout_ru/order'
 
 module CheckoutRu
   SERVICE_URL = 'http://platform.checkout.ru'.freeze
-
   Error = Class.new(Faraday::Error::ClientError)
 
   class << self
-    attr_accessor :service_url, :api_key, :adapter
+    attr_accessor \
+      :service_url,
+      :api_key,
+      :adapter,
+      :auto_renew_session
 
     def get_ticket(options = {})
       key = options.delete(:api_key) || api_key
@@ -106,13 +109,13 @@ module CheckoutRu
     end
 
     def build_connection(options = {})
-      url = options[:url] || service_url || SERVICE_URL
+      url = options[:url] || service_url
 
-      Faraday.new(:url => url) do |faraday|
-        faraday.request :multi_json
-        faraday.response :raise_error
-        faraday.response :multi_json
-        faraday.adapter options[:adapter] || adapter || Faraday.default_adapter
+      Faraday.new(:url => url) do |conn|
+        conn.request :multi_json
+        conn.response :raise_error
+        conn.response :multi_json
+        conn.adapter options[:adapter] || adapter
       end
     end
 
@@ -148,4 +151,9 @@ module CheckoutRu
       end
     end
   end
+
+  # Defaults
+  self.adapter = Faraday.default_adapter
+  self.auto_renew_session = true
+  self.service_url = SERVICE_URL
 end

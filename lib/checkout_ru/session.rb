@@ -9,7 +9,6 @@ module CheckoutRu
 
     def initialize(ticket)
       @ticket = ticket
-      @conn = CheckoutRu.build_connection
     end
 
     def get_places_by_query(params = {}, options = {})
@@ -34,12 +33,25 @@ module CheckoutRu
 
     private
     def get(service, params = {}, options = {})
-      args = {
-        :connection => @conn,
-        :params => params.merge(:ticket => @ticket)
-      }.merge(options)
-
+      args = {:params => params.merge(:ticket => @ticket)}.merge(options)
+      args[:connection] ||= build_connection
       CheckoutRu.make_request "/service/checkout/#{service}", args
+    rescue Faraday::Error::ClientError => e
+      if CheckoutRu.auto_renew_session && expired_ticket_exception?(e)
+        @ticket = CheckoutRu.get_ticket
+      else
+        raise
+      end
+    end
+
+    def build_connection
+      @connection ||= CheckoutRu.build_connection
+    end
+
+    def expired_ticket_exception?(exception)
+      exception.respond_to?(:response) &&
+        exception.response[:status] == 500 &&
+        exception.response[:body] =~ /#{@ticket}\s+expired\s+or\s+invalid/
     end
   end
 end
