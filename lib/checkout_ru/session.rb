@@ -7,6 +7,8 @@ module CheckoutRu
       end
     end
 
+    attr_reader :ticket
+
     def initialize(ticket)
       @ticket = ticket
     end
