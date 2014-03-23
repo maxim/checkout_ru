@@ -57,6 +57,7 @@ module CheckoutRu
 
     def expired_ticket_exception?(exception)
       exception.respond_to?(:response) &&
+        exception.response.respond_to?(:[]) &&
         exception.response[:status] == 500 &&
         exception.response[:body] =~ /#{@ticket}\s+is\s+expired\s+or\s+invalid/
     end
