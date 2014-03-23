@@ -27,8 +27,8 @@ module CheckoutRu
 
     def create_order(order, options = {})
       args = {
-        :via    => :post,
-        :params => { :order => order }
+        :via => :post,
+        :params => { :order => order.to_hash }
       }.merge(options)
 
       make_request_with_key '/service/order/create', args
@@ -37,7 +37,7 @@ module CheckoutRu
     def update_order(remote_id, order, options = {})
       args = {
         :via => :post,
-        :params => { :order => order }
+        :params => { :order => order.to_hash }
       }.merge(options)
 
       make_request_with_key "/service/order/#{remote_id}", args
