@@ -18,23 +18,26 @@ class CheckoutRuTest < MiniTest::Test
       :delivery => CheckoutRu::Delivery.new(
         :delivery_id   => 2,
         :place_fias_id => '0c5b2444-70a0-4932-980c-b4dc0d3f02b5',
-        :address_pvz   => 'Энтузиастов ш.,  д. 54',
+        :address_pvz   => '1-я Квесисская улица, 18',
         :type          => 'postamat',
-        :cost          => 224.41,
-        :min_term      => 2,
-        :max_term      => 11
+        :cost          => 230,
+        :min_term      => 1,
+        :max_term      => 2
       ),
 
       :user => CheckoutRu::User.new(
-        :fullname => 'Вася Пупкин',
-        :email    => 'vasyapupkin@example.com',
+        :fullname => 'Test Order',
+        :email    => 'testorder@example.com',
         :phone    => '555'
       ),
 
-      :comment => 'test order',
-      :shop_order_id  => '777',
+      :comment => 'TEST ORDER',
       :payment_method => 'cash'
     )
+  end
+
+  def create_order
+    CheckoutRu.create_order(build_order).order.id
   end
 
   def test_configured_api_key_is_used_to_make_request
@@ -46,12 +49,12 @@ class CheckoutRuTest < MiniTest::Test
 
   def test_get_ticket_returns_valid_ticket
     VCR.use_cassette('get_ticket') do
-      assert_equal 'valid-ticket',
-        CheckoutRu.get_ticket(:api_key => 'valid-api-key')
+      assert_match /\A[a-f0-9]{32,}\Z/,
+        CheckoutRu.get_ticket(:api_key => CheckoutRu.api_key)
     end
   end
 
-  def test_get_ticket_with_invalid_api_key_raises_invalid_key_error
+  def test_get_ticket_with_invalid_api_key_raises_client_error
     VCR.use_cassette('get_ticket_invalid_api_key') do
       assert_raises Faraday::Error::ClientError do
         CheckoutRu.get_ticket(:api_key => 'invalid-api-key')
@@ -60,25 +63,25 @@ class CheckoutRuTest < MiniTest::Test
   end
 
   def test_create_order
-    order = build_order
-
     VCR.use_cassette('create_order') do
-      response = CheckoutRu.create_order(order, :api_key => 'valid-api-key')
+      order = build_order
+      response = CheckoutRu.create_order(order)
 
-      assert_equal 75, response.order.id
+      assert_match /\A\d+\Z/, response.order.id.to_s
       assert_equal 2, response.delivery.id
       assert_equal 'PickPoint', response.delivery.service_name
     end
   end
 
   def test_update_order
-    order = build_order
-    order.user.fullname = 'Петя Пупкин'
-
     VCR.use_cassette('update_order') do
-      response = CheckoutRu.update_order(75, order, :api_key => 'valid-api-key')
+      id = create_order
 
-      assert_equal 75, response.order.id
+      order = build_order
+      order.user.fullname = 'Петя Пупкин'
+      response = CheckoutRu.update_order(id, order)
+
+      assert_equal id, response.order.id
       assert_equal 2, response.delivery.id
       assert_equal 'PickPoint', response.delivery.service_name
     end
@@ -86,21 +89,21 @@ class CheckoutRuTest < MiniTest::Test
 
   def test_status
     VCR.use_cassette('status') do
-      response = CheckoutRu.status \
-        75, :cancelled_before_shipment, :api_key => 'valid-api-key'
+      id = create_order
+      response = CheckoutRu.status(id, :cancelled_before_shipment)
       assert_equal '', response
     end
   end
 
   def test_status_history
     VCR.use_cassette('status_history') do
-      response = CheckoutRu.status_history(777, :api_key => 'valid-api-key')
+      id = create_order
+      response = CheckoutRu.status_history(id)
 
-      assert_equal '75', response.order.id
-      assert_equal Date.parse('2014-02-01'), response.order.date
-      assert_equal 1724.41, response.order.total_cost
-      assert_equal nil, response.order.approximate_delivery_date
-      assert_equal 'Петя Пупкин', response.user.fullname
+      assert_equal id, response.order.id.to_i
+      assert_kind_of Date, response.order.date
+      assert_kind_of Float, response.order.total_cost
+      assert_equal 'Test Order', response.user.fullname
       assert_equal 'г. Москва', response.user.address.place
       assert_equal 'PickPoint', response.delivery_name
       assert_equal [], response.delivery_history
@@ -109,7 +112,7 @@ class CheckoutRuTest < MiniTest::Test
 
   def test_populated_status_history
     VCR.use_cassette('populated_status_history') do
-      response = CheckoutRu.status_history(64, :api_key => 'valid-api-key')
+      response = CheckoutRu.status_history(64)
 
       assert_equal '64', response.order.id
       assert_equal Date.parse('2013-10-14'), response.order.date

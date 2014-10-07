@@ -4,9 +4,21 @@ require 'mocha/mini_test'
 require 'vcr'
 require 'cgi'
 
+REAL_API_KEY = ENV['CHECKOUT_RU_API_KEY']
+CheckoutRu.api_key = ENV['CHECKOUT_RU_API_KEY'] || 'valid-api-key'
+CheckoutRu.auto_renew_session = true
+
 VCR.configure do |c|
   c.cassette_library_dir = 'test/fixtures'
   c.hook_into :faraday
+
+  if REAL_API_KEY
+    c.filter_sensitive_data('valid-api-key') { CheckoutRu.api_key }
+  end
+
+  c.before_record do |i|
+    i.response.body.force_encoding('UTF-8')
+  end
 
   # From here: https://github.com/vcr/vcr/wiki/Common-Custom-Matchers
   c.register_request_matcher :uri_ignoring_params_order do |r1, r2|
@@ -19,7 +31,10 @@ VCR.configure do |c|
           CGI.parse(uri1.query || '') == CGI.parse(uri2.query || '')
   end
 
-  c.default_cassette_options = {
-    match_requests_on: [:method, :uri_ignoring_params_order]
+  cassette_options = {
+    :match_requests_on => [:method, :uri_ignoring_params_order],
+    :decode_compressed_response => true
   }
+  cassette_options.merge!(:re_record_interval => 0) if REAL_API_KEY
+  c.default_cassette_options = cassette_options
 end

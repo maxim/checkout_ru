@@ -2,13 +2,12 @@
 http_interactions:
 - request:
     method: post
-    uri: http://platform.checkout.ru/service/order/75
+    uri: http://platform.checkout.ru/service/order/create
     body:
       encoding: UTF-8
-      string: '{"apiKey":"valid-api-key","order":{"goods":[{"name":"blue
-        tshirt","code":"blt","variantCode":"blue","quantity":2,"assessedCost":1000,"payCost":750,"weight":0.5}],"delivery":{"deliveryId":2,"placeFiasId":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","addressPvz":"Энтузиастов
-        ш.,  д. 54","type":"postamat","cost":224.41,"minTerm":2,"maxTerm":11},"user":{"fullname":"Петя
-        Пупкин","email":"vasyapupkin@example.com","phone":"555"},"comment":"test order","shopOrderId":"777","paymentMethod":"cash"}}'
+      string: '{"order":{"goods":[{"name":"blue tshirt","code":"blt","variantCode":"blue","quantity":2,"assessedCost":1000,"payCost":750,"weight":0.5}],"delivery":{"deliveryId":2,"placeFiasId":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","addressPvz":"1-я
+        Квесисская улица, 18","type":"postamat","cost":230,"minTerm":1,"maxTerm":2},"user":{"fullname":"Вася
+        Пупкин","email":"vasyapupkin@example.com","phone":"555"},"comment":"test order","shopOrderId":"11","paymentMethod":"cash"},"apiKey":"valid-api-key"}'
     headers:
       User-Agent:
       - Faraday v0.8.9
@@ -19,21 +18,56 @@ http_interactions:
   response:
     status:
       code: 200
-      message:
+      message: 
     headers:
-      date:
-      - Sat, 01 Feb 2014 19:27:28 GMT
       server:
-      - Apache/2.2.22 (Ubuntu)
-      connection:
-      - close
-      transfer-encoding:
-      - chunked
+      - nginx/1.7.5
+      date:
+      - Tue, 07 Oct 2014 00:53:10 GMT
       content-type:
       - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
     body:
       encoding: UTF-8
-      string: '{"order":{"id":75},"delivery":{"id":2,"serviceName":"PickPoint"}}'
-    http_version:
-  recorded_at: Sat, 01 Feb 2014 19:28:41 GMT
+      string: '{"order":{"id":32855},"delivery":{"id":2,"serviceName":"PickPoint","cost":"230.0"}}'
+    http_version: 
+  recorded_at: Tue, 07 Oct 2014 00:51:52 GMT
+- request:
+    method: post
+    uri: http://platform.checkout.ru/service/order/32855
+    body:
+      encoding: UTF-8
+      string: '{"order":{"goods":[{"name":"blue tshirt","code":"blt","variantCode":"blue","quantity":2,"assessedCost":1000,"payCost":750,"weight":0.5}],"delivery":{"deliveryId":2,"placeFiasId":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","addressPvz":"1-я
+        Квесисская улица, 18","type":"postamat","cost":230,"minTerm":1,"maxTerm":2},"user":{"fullname":"Петя
+        Пупкин","email":"vasyapupkin@example.com","phone":"555"},"comment":"test order","shopOrderId":"11","paymentMethod":"cash"},"apiKey":"valid-api-key"}'
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.5
+      date:
+      - Tue, 07 Oct 2014 00:53:11 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"order":{"id":32855},"delivery":{"id":2,"serviceName":"PickPoint","cost":"230.0"}}'
+    http_version: 
+  recorded_at: Tue, 07 Oct 2014 00:51:52 GMT
 recorded_with: VCR 2.8.0

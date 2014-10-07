@@ -8,28 +8,27 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.8.8
+      - Faraday v0.8.9
+      Accept:
+      - application/json
   response:
     status:
       code: 400
-      message:
+      message: 
     headers:
-      date:
-      - Tue, 28 Jan 2014 22:47:53 GMT
       server:
-      - Apache/2.2.22 (Ubuntu)
-      vary:
-      - Accept-Encoding
-      connection:
-      - close
-      transfer-encoding:
-      - chunked
+      - nginx/1.7.5
+      date:
+      - Mon, 06 Oct 2014 23:11:17 GMT
       content-type:
       - text/plain;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        0J3QtdCy0LXRgNC90YvQuSDQuNC00LXQvdGC0LjRhNC40LrQsNGC0L7RgA==
-    http_version:
-  recorded_at: Tue, 28 Jan 2014 22:49:38 GMT
+      encoding: UTF-8
+      string: "Неверный идентификатор"
+    http_version: 
+  recorded_at: Mon, 06 Oct 2014 23:09:59 GMT
 recorded_with: VCR 2.8.0

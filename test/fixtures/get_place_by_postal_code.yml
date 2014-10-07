@@ -2,36 +2,351 @@
 http_interactions:
 - request:
     method: get
-    uri: http://platform.checkout.ru/service/checkout/getPlaceByPostalCode?postIndex=111524&ticket=valid-ticket
+    uri: http://platform.checkout.ru/service/checkout/getPlaceByPostalCode?postIndex=111524&ticket=tests-will-autorequest-a-valid-ticket
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.8.8
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 500
+      message: 
+    headers:
+      server:
+      - nginx/1.7.5
+      date:
+      - Mon, 06 Oct 2014 23:07:35 GMT
+      content-type:
+      - text/html
+      content-length:
+      - '26172'
+      connection:
+      - close
+      etag:
+      - '"53f49af2-663c"'
+    body:
+      encoding: UTF-8
+      string: "<html lang=\"ru-RU\"><head>\r\n<meta charset=\"UTF-8\">\r\n<title>Страница
+        не найдена | Checkout</title>\r\n\t\r\n\r\n<link rel=\"profile\" href=\"//gmpg.org/xfn/11\">\r\n\r\n\r\n<link
+        rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"//www.checkout.ru/wp-content/themes/checkout/login.css?ver=201310312-1\">\r\n<script
+        type=\"text/javascript\" async=\"\" src=\"//mc.yandex.ru/metrika/watch.js\"></script><script
+        type=\"text/javascript\" async=\"\" src=\"//www.google-analytics.com/ga.js\"></script><script
+        type=\"text/javascript\" src=\"//www.checkout.ru/wp-content/themes/checkout/login.js?v=1.8.5\"></script>\r\n\r\n<link
+        rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"//www.checkout.ru/wp-content/themes/checkout/style.css?ver=20131203-1\">\r\n<link
+        rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"//www.checkout.ru/wp-content/themes/checkout/fonts/fonts.css?ver=20131127-1\">\r\n<link
+        rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"//www.checkout.ru/wp-content/themes/checkout/style_theme.css?ver=20140326-1\">\r\n<link
+        rel=\"shortcut icon\" href=\"//www.checkout.ru/wp-content/themes/checkout/favicon.ico\"
+        type=\"image/x-icon\"> \r\n<link rel=\"pingback\" href=\"//www.checkout.ru/xmlrpc.php\">\r\n\r\n\t<!--
+        SLIDER -->\r\n\t<link rel=\"stylesheet\" href=\"//www.checkout.ru/wp-content/themes/checkout/scripts/nivo-slider.css?ver=20131127\"
+        type=\"text/css\" media=\"screen\">\r\n\t<!-- /SLIDER -->\r\n\r\n<link rel=\"alternate\"
+        type=\"application/rss+xml\" title=\"Checkout » Лента\" href=\"//www.checkout.ru/feed/\">\r\n<link
+        rel=\"alternate\" type=\"application/rss+xml\" title=\"Checkout » Лента комментариев\"
+        href=\"//www.checkout.ru/comments/feed/\">\r\n<link rel=\"stylesheet\" id=\"contact-form-7-css\"
+        href=\"//www.checkout.ru/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=3.5.4\"
+        type=\"text/css\" media=\"all\">\r\n<link rel=\"stylesheet\" id=\"esl-slideshow-css\"
+        href=\"//www.checkout.ru/wp-content/plugins/easing-slider/css/slideshow.min.css?ver=2.1.2\"
+        type=\"text/css\" media=\"all\">\r\n<link rel=\"stylesheet\" id=\"email-subscription_css-css\"
+        href=\"//www.checkout.ru/wp-content/plugins/email-subscription/assets/email-subscription.css?ver=0.50\"
+        type=\"text/css\" media=\"all\">\r\n<link rel=\"stylesheet\" id=\"fancybox-css\"
+        href=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/jquery.fancybox-1.3.5.pack.css?ver=1.5.5\"
+        type=\"text/css\" media=\"screen\">\r\n<link rel=\"stylesheet\" id=\"adv-spoiler-css\"
+        href=\"//www.checkout.ru/wp-content/plugins/advanced-spoiler/css/advanced-spoiler.css?ver=2.02\"
+        type=\"text/css\" media=\"all\">\r\n<script type=\"text/javascript\" src=\"//www.checkout.ru/wp-includes/js/jquery/jquery.js?ver=1.10.2\"></script>\r\n<script
+        type=\"text/javascript\" src=\"//www.checkout.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1\"></script>\r\n<script
+        type=\"text/javascript\" src=\"//www.checkout.ru/wp-content/plugins/easing-slider/js/slideshow.min.js?ver=2.1.2\"></script>\r\n<script
+        type=\"text/javascript\" src=\"//www.checkout.ru/wp-content/plugins/advanced-spoiler/js/jquery-spoiler.js?ver=2.02\"></script>\r\n<link
+        rel=\"EditURI\" type=\"application/rsd+xml\" title=\"RSD\" href=\"//www.checkout.ru/xmlrpc.php?rsd\">\r\n<link
+        rel=\"wlwmanifest\" type=\"application/wlwmanifest+xml\" href=\"//www.checkout.ru/wp-includes/wlwmanifest.xml\">
+        \r\n<meta name=\"generator\" content=\"WordPress 3.7.1\">\r\n <style type=\"text/css\">
+        .easingsliderlite { } .easingsliderlite .easingsliderlite-arrows.easingsliderlite-next,
+        .easingsliderlite .easingsliderlite-arrows.easingsliderlite-prev { } .easingsliderlite
+        .easingsliderlite-arrows.easingsliderlite-next { background-image: url(//www.checkout.ru/wp-content/plugins/easing-slider/images/slideshow_arrow_next.png);
+        } .easingsliderlite .easingsliderlite-arrows.easingsliderlite-prev { background-image:
+        url(//www.checkout.ru/wp-content/plugins/easing-slider/images/slideshow_arrow_prev.png);
+        } .easingsliderlite .easingsliderlite-pagination .easingsliderlite-icon {
+        } .easingsliderlite .easingsliderlite-pagination .easingsliderlite-icon.inactive
+        { background-image: url(//www.checkout.ru/wp-content/plugins/easing-slider/images/slideshow_icon_inactive.png);
+        } .easingsliderlite .easingsliderlite-pagination .easingsliderlite-icon.active
+        { background-image: url(//www.checkout.ru/wp-content/plugins/easing-slider/images/slideshow_icon_active.png);
+        } </style> \r\n\t<!-- Easy FancyBox 1.5.5 using FancyBox 1.3.5 - RavanH (//status301.net/wordpress-plugins/easy-fancybox/)
+        -->\r\n<!--[if lt IE 8]>            \r\n<style type=\"text/css\">\r\n/* IE6
+        */\r\n.fancybox-ie6 #fancybox-close{background:transparent;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/fancy_close.png\",sizingMethod=\"scale\")}\r\n.fancybox-ie6
+        #fancybox-left-ico{background:transparent;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/fancy_nav_left.png\",sizingMethod=\"scale\")}\r\n.fancybox-ie6
+        #fancybox-right-ico{background:transparent;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/fancy_nav_right.png\",sizingMethod=\"scale\")}\r\n.fancybox-ie6
+        #fancybox-title-over{background:transparent;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/fancy_title_over.png\",sizingMethod=\"scale\");zoom:1}\r\n.fancybox-ie6
+        #fancybox-title-float-left{background:transparent;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/fancy_title_left.png\",sizingMethod=\"scale\")}\r\n.fancybox-ie6
+        #fancybox-title-float-main{background:transparent;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/fancy_title_main.png\",sizingMethod=\"scale\")}\r\n.fancybox-ie6
+        #fancybox-title-float-right{background:transparent;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/fancy_title_right.png\",sizingMethod=\"scale\")}\r\n.fancybox-ie6
+        #fancybox-bg-w,.fancybox-ie6 #fancybox-bg-e,.fancybox-ie6 #fancybox-left,.fancybox-ie6
+        #fancybox-right,#fancybox-hide-sel-frame{height:expression(this.parentNode.clientHeight+\"px\")}\r\n#fancybox-loading.fancybox-ie6{position:absolute;margin-top:0;top:expression((-20+(document.documentElement.clientHeight
+        ? document.documentElement.clientHeight/2 : document.body.clientHeight/2)+(ignoreMe=document.documentElement.scrollTop
+        ? document.documentElement.scrollTop : document.body.scrollTop))+\"px\")}\r\n#fancybox-loading.fancybox-ie6
+        div{background:transparent;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/fancy_loading.png\",
+        sizingMethod=\"scale\")}\r\n/* IE6, IE7 */\r\n.fancybox-ie .fancybox-bg{background:transparent
+        !important}\r\n.fancybox-ie #fancybox-bg-n{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/fancy_shadow_n.png\",sizingMethod=\"scale\")}\r\n.fancybox-ie
+        #fancybox-bg-ne{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/fancy_shadow_ne.png\",sizingMethod=\"scale\")}\r\n.fancybox-ie
+        #fancybox-bg-e{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/fancy_shadow_e.png\",sizingMethod=\"scale\")}\r\n.fancybox-ie
+        #fancybox-bg-se{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/fancy_shadow_se.png\",sizingMethod=\"scale\")}\r\n.fancybox-ie
+        #fancybox-bg-s{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/fancy_shadow_s.png\",sizingMethod=\"scale\")}\r\n.fancybox-ie
+        #fancybox-bg-sw{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/fancy_shadow_sw.png\",sizingMethod=\"scale\")}\r\n.fancybox-ie
+        #fancybox-bg-w{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/fancy_shadow_w.png\",sizingMethod=\"scale\")}\r\n.fancybox-ie
+        #fancybox-bg-nw{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/fancy_shadow_nw.png\",sizingMethod=\"scale\")}\r\n</style>\r\n<![endif]-->\r\n<!--[if
+        IE 8]>            \r\n<style type=\"text/css\">\r\n.fancybox-ie .fancybox-bg{background:transparent
+        !important}\r\n.fancybox-ie #fancybox-bg-n{-ms-filter:'progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/fancy_shadow_n.png\",sizingMethod=\"scale\")'}\r\n.fancybox-ie
+        #fancybox-bg-ne{-ms-filter:'progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/fancy_shadow_ne.png\",sizingMethod=\"scale\")'}\r\n.fancybox-ie
+        #fancybox-bg-e{-ms-filter:'progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/fancy_shadow_e.png\",sizingMethod=\"scale\")'}\r\n.fancybox-ie
+        #fancybox-bg-se{-ms-filter:'progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/fancy_shadow_se.png\",sizingMethod=\"scale\")'}\r\n.fancybox-ie
+        #fancybox-bg-s{-ms-filter:'progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/fancy_shadow_s.png\",sizingMethod=\"scale\")'}\r\n.fancybox-ie
+        #fancybox-bg-sw{-ms-filter:'progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/fancy_shadow_sw.png\",sizingMethod=\"scale\")'}\r\n.fancybox-ie
+        #fancybox-bg-w{-ms-filter:'progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/fancy_shadow_w.png\",sizingMethod=\"scale\")'}\r\n.fancybox-ie
+        #fancybox-bg-nw{-ms-filter:'progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/fancy_shadow_nw.png\",sizingMethod=\"scale\")'}\r\n</style>\r\n<![endif]-->\r\n\r\n\t<script
+        type=\"text/javascript\">\r\n\t/* <![CDATA[ */\r\n\tvar fb_timeout = null;\r\n\tvar
+        fb_opts = { 'overlayShow' : true, 'hideOnOverlayClick' : true, 'showCloseButton'
+        : true, 'centerOnScroll' : true, 'enableEscapeButton' : true, 'autoScale'
+        : true };\r\n\tvar easy_fancybox_handler = function(){\r\n\t/* IMG */\r\n\tvar
+        fb_IMG_select = 'a[href*=\".jpg\"]:not(.nofancybox), area[href*=\".jpg\"]:not(.nofancybox),
+        a[href*=\".jpeg\"]:not(.nofancybox), area[href*=\".jpeg\"]:not(.nofancybox),
+        a[href*=\".png\"]:not(.nofancybox), area[href*=\".png\"]:not(.nofancybox)';\r\n\tjQuery(fb_IMG_select).addClass('fancybox');\r\n\tvar
+        fb_IMG_sections = jQuery('div.gallery');\r\n\tfb_IMG_sections.each(function()
+        { jQuery(this).find(fb_IMG_select).attr('rel', 'gallery-' + fb_IMG_sections.index(this));
+        });\r\n\tjQuery('a.fancybox, area.fancybox, li.fancybox a:not(li.nofancybox
+        a)').fancybox( jQuery.extend({}, fb_opts, { 'easingIn' : 'easeOutBack', 'easingOut'
+        : 'easeInBack', 'opacity' : false, 'hideOnContentClick' : false, 'titleShow'
+        : true, 'titlePosition' : 'over', 'titleFromAlt' : true, 'showNavArrows' :
+        true, 'enableKeyboardNav' : true, 'cyclic' : false }) );\r\n\t/* Auto-click
+        */ \r\n\tjQuery('#fancybox-auto').trigger('click');\r\n\t}\r\n\t/* ]]> */\r\n\t</script>\r\n\t<style
+        type=\"text/css\">.fancybox-hidden{display:none}.rtl #fancybox-left{left:auto;right:0px}.rtl
+        #fancybox-right{left:0px;right:auto}.rtl #fancybox-right-ico{background-position:-40px
+        -30px}.rtl #fancybox-left-ico{background-position:-40px -60px}.rtl .fancybox-title-over{text-align:right}.rtl
+        #fancybox-left-ico,.rtl #fancybox-right-ico{right:-9999px}.rtl #fancybox-right:hover
+        span{right:auto;left:20px}.rtl #fancybox-left:hover span{right:20px}#fancybox-img{max-width:none;max-height:none}#fancybox-outer{background-color:#fff}#fancybox-content{border-color:#fff}#fancybox-content{color:inherit}</style>\r\n\t<!--
+        \r\n\t\t\tPlugin: Super Simple Google Analytics \r\n\tPlugin URL: Super Simple
+        Google Analytics\r\n\r\n\r\n\t-->\r\n\r\n<script type=\"text/javascript\">\r\n\t\twindow.google_analytics_uacct
+        = \"UA-42124902-1\";\r\n\t</script>\r\n\r\n<script type=\"text/javascript\">\r\n\t
+        \ var _gaq = _gaq || [];\r\n\t  _gaq.push(['_setAccount', 'UA-42124902-1']);\r\n\t
+        \ _gaq.push(['_trackPageview']);\r\n\t\r\n\t  (function() {\r\n\t\tvar ga
+        = document.createElement('script'); ga.type = 'text/javascript'; ga.async
+        = true;\r\n\t\tga.src = ('https:' == document.location.protocol ? 'https://ssl'
+        : '//www') + '.google-analytics.com/ga.js';\r\n\t\tvar s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);\r\n\t  })();\r\n\t</script>\r\n\r\n<style>\r\n\r\n#work
+        {\r\n    background: none repeat scroll 0 0 #ff0000;\r\n    border-radius:
+        0 0 10px 10px;\r\n    position:absolute;\r\n    margin: 0 0 0 367px;\r\n    padding:
+        10px;\r\n    width: 290px;\r\n}\r\n\r\n#work a {\r\n    color: #FFFFFF;\r\n
+        \   font-size: 24px;\r\n    text-decoration: none;\r\n    border:none !important;\r\n}\r\n#work
+        a:hover {\r\n    color: #ffc3c3;\r\n\r\n}\r\n</style>\r\n\r\n</head>\r\n<!--
+        HEADER -->\r\n<body style=\"zoom: 1;\"><div class=\"header header_new\">\r\n\t<div
+        class=\"layout\">\t\r\n\t\t\r\n\t\t<div class=\"logo\"><a href=\"//www.checkout.ru/\"
+        title=\"Checkout\" rel=\"home\"><img src=\"//www.checkout.ru/wp-content/themes/checkout/images/logo.png\"
+        alt=\"Checkout\"></a></div>\r\n\r\n<!--div id=\"work\">\r\n    <a class=\"fancybox\"
+        href=\"#btn_top\" id=\"inline\">Приглашаем на вебинар</a>\r\n    \r\n    <div
+        style=\"display:none;\"><div id=\"btn_top\" style=\"width:400px; font-size:18px;
+        padding:30px;text-align:left;\">\r\n<h3>3 марта 2014, в 16-00 мы ждем вас
+        на вебинаре: \"<a href=\"//zillion.net/ru/event/542/kak-intierniet-maghazinu-poluchit-i-obrabotat-100-zakazov-v-dien\"
+        target=\"_blank\">Как интернет магазину получить и обработать 100 заказов
+        в день?</a>\"</h3>\r\n        </div>\r\n    </div>\r\n    \r\n</div-->\r\n\r\n\t\t<div
+        class=\"header_right\">\r\n<div id=\"banner\">\r\n<!-- <a class=\"fancybox\"
+        href=\"#btn_top\">Вебинар</a>\r\n    <div style=\"display:none;\"><div id=\"btn_top\"
+        style=\"width:400px; font-size:18px; padding:30px;text-align:left;\">\r\n<h3>12
+        мая 2014 г., в 16-00 мы ждем вас на вебинаре: \"<a href=\"//zillion.net/ru/event/921/kak-uvielichit-sriednii-chiek-i-kolichiestvo-zakazov-v-intierniet-maghazinie\"
+        target=\"_blank\">Как получить и обработать 100 заказов в день для вашего
+        интернет-магазина</a>\"</h3>\r\n        </div>\r\n    </div> -->\r\n\t\r\n\t<!--a
+        class=\"expo_banner\" href=\"/ecom-expo-14/\">ECOM Expo '14</a-->\r\n\r\n</div>\r\n\t\t\r\n\t\t\t<!--
+        HEADER CONTACTS -->\r\n\t\t\t<div class=\"header_contacts\">\r\n\t\t\t\t<div>\r\n\t\t\t\t\t<a
+        href=\"//vk.com/agregator_dostavok\"><img src=\"//www.checkout.ru/wp-content/themes/checkout/images/s_vk.png\"
+        alt=\"\"></a>\r\n\t\t\t\t\t<a href=\"https://www.youtube.com/channel/UCGIFGtsz1bKvzIfCQJue6fw\"><img
+        src=\"//www.checkout.ru/wp-content/themes/checkout/images/s_yt.png\" alt=\"\"></a>\r\n\t\t\t\t\t<a
+        href=\"https://www.facebook.com/checkout.ru\"><img src=\"//www.checkout.ru/wp-content/themes/checkout/images/s_fb.png\"
+        alt=\"\"></a>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div>+7 (495) 255-22-62 <a href=\"mailto:info@checkout.ru\">info@checkout.ru</a></div>\r\n\t\t\t</div>\r\n\t\t\t<!--
+        /HEADER CONTACTS -->\r\n\t\t\r\n\t\t\r\n<div class=\"clear\">&nbsp;</div>\r\n\r\n\t\t\t<div
+        id=\"loginLink\">\r\n\t\t\t<!--a href=\"javascript:showLoginForm()\">Вход
+        в платформу</a-->\r\n\t\t\t<a href=\"https://platform.checkout.ru\">Вход в
+        платформу</a>\r\n\t\t\t<form style=\"display:none;\" id=\"loginForm\" action=\"//demo.checkout.ru/j_spring_security_check#orders\"
+        method=\"post\" target=\"platform\" onsubmit=\"return checkFieldsForLogin();\">\r\n\t\t\t\t<img
+        src=\"//platform.checkout.ru/checkout/img/closecop.png\" width=\"22\" height=\"22\"
+        onclick=\"this.parentNode.style.display='none';\">\r\n\t\t\t\t<input name=\"uri\"
+        value=\"integration002.nativelabs.ru:8080\" type=\"hidden\">\r\n\t\t\t\t<input
+        name=\"point\" value=\"\" type=\"hidden\">\r\n\t\t\t\t<input name=\"oid\"
+        value=\"\" type=\"hidden\">\r\n\t\t\t\t<input name=\"j_username\" value=\"\"
+        placeholder=\"e-mail\"><br>\r\n\t\t\t\t<input name=\"j_password\" value=\"\"
+        type=\"password\" placeholder=\"пароль\"><br>\r\n\t\t\t\t<input type=\"submit\"
+        value=\"Войти в платформу\">\r\n\t\t\t</form>\r\n\t\t\t</div>\r\n\t\t\r\n\t\t\t<!--
+        MENU -->\r\n\t\t\t<div class=\"main_menu\">\r\n\t\t\t\t<ul id=\"menu-main-menu\"
+        class=\"main_menu_ul\"><li id=\"menu-item-204\" class=\"menu-item menu-item-type-post_type
+        menu-item-object-page menu-item-204\"><a href=\"//www.checkout.ru/\">Главная</a></li>\r\n<li
+        id=\"menu-item-253\" class=\"menu-item menu-item-type-custom menu-item-object-custom
+        menu-item-253\"><a href=\"//www.checkout.ru/why/\">Почему Checkout</a></li>\r\n<li
+        id=\"menu-item-513\" class=\"menu-item menu-item-type-post_type menu-item-object-page
+        menu-item-513\"><a href=\"//www.checkout.ru/voprosy-i-otvety/\">FAQ</a></li>\r\n<li
+        id=\"menu-item-437\" class=\"menu-item menu-item-type-post_type menu-item-object-page
+        menu-item-437\"><a href=\"//www.checkout.ru/demonstration/\">Демо</a></li>\r\n<li
+        id=\"menu-item-374\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category
+        menu-item-374\"><a href=\"//www.checkout.ru/./news/\">Новости</a></li>\r\n<li
+        id=\"menu-item-256\" class=\"menu-item menu-item-type-post_type menu-item-object-page
+        menu-item-256\"><a href=\"//www.checkout.ru/contact/\">Контакты</a></li>\r\n</ul>\t\t\t</div>\r\n\t\t\t<!--
+        /MENU -->\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n<div
+        class=\"clear\">&nbsp;</div>\r\n<!-- /HEADER -->\r\n\r\n<!-- MAIN -->\r\n<div
+        class=\"main\">\r\n\t<div class=\"layout\">\r\n\t\t<!-- CONTENT -->\r\n\t\t<div
+        class=\"content\">\r\n\t\t\t<div class=\"inner\">\r\n\r\n\t\t\t<div id=\"post-0\"
+        class=\"post error404 not-found\">\r\n\t\t\t\t<h1 class=\"entry-title\" style=\"\r\n
+        \   padding-top: 50px;\r\n    font-size: 38px;\r\n\">Сервис временно не доступен</h1>\r\n\t\t\t\t<div
+        class=\"entry-content\">\r\n\t\t\t\t\t<p style=\"\r\n    font-size: 18px;\r\n
+        \   line-height: 41px;\r\n\">Извините, по техническим причинам сервис временно
+        не доступен. <br>Попробуйте зайти через несколько минут. <br>Приносим свои
+        извинения за причинённые неудобства.</p>\r\n\t\t\t\t\t\t\t\t\t</div><!-- .entry-content
+        -->\r\n\t\t\t</div><!-- #post-0 -->\r\n\r\n\t\t\t\t</div>\r\n\t\t</div>\r\n\t\t<!--
+        /CONTENT -->\r\n\t\t\r\n\t\t<script type=\"text/javascript\">\r\n\t\t// focus
+        on search field after it has loaded\r\n\t\tdocument.getElementById('s') &&
+        document.getElementById('s').focus();\r\n\t</script>\r\n\t\t\r\n\t\t<!-- SIDEBAR
+        -->\r\n\t\t<div class=\"sidebar\">\r\n\t\t\t<div class=\"inner\">\r\n\t\t\t\t<ul
+        class=\"xoxo\">\r\n\t\t\t\t\t\t\t\t\t</ul>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t<!--
+        /SIDEBAR -->\r\n\t</div>\r\n\t<div class=\"clear\">&nbsp;</div>\r\n</div>\r\n<!--
+        /MAIN -->\r\n\r\n\r\n<!-- /MAIN -->\r\n\r\n\r\n\r\n<!-- FOOTER LINE -->\r\n<div
+        class=\"footer_line\">\r\n\t<div class=\"layout\">\r\n\t\t<!-- PARTNERS -->\r\n\t\t<div
+        class=\"partners\">\r\n\t\t\t<p class=\"simple-image\"><img width=\"175\"
+        height=\"215\" src=\"//www.checkout.ru/wp-content/uploads/2013/04/partners_2.png\"
+        class=\"attachment-full\" alt=\"partners_2\"></p>\t\t</div>\r\n\t\t<!-- /PARTNERS
+        -->\r\n\t\t<!-- ADVANTAGES -->\r\n\t\t<div class=\"advantages\">\r\n\t\t\t<div
+        class=\"inner\">\r\n\t\t\t\t<!-- advantages -->\r\n\t\t\t\r\n\t\t\t\t<h2 class=\"widgettitle\">Преимущества</h2>\r\n\t\t\t<div
+        class=\"textwidget\"><div class=\"adv\">\r\n<h4>Один договор</h4>\r\n<p>Полный
+        спектр существующих способов и сервисов доставки при заключении всего одного
+        <br>договора. <a href=\"//www.checkout.ru/why/\" class=\"adv_link\">&nbsp;</a></p>\r\n</div>\r\n\r\n<div
+        class=\"adv\">\r\n<h4>Автоматизация</h4>\r\n<p>Расчет и подбор наиболее оптимальных
+        тарифов и служб доставки происходит автоматически. <a href=\"//www.checkout.ru/why/\"
+        class=\"adv_link\">&nbsp;</a></p>\r\n</div>\r\n\r\n<div class=\"clear\">&nbsp;</div>\r\n\r\n<div
+        class=\"adv\">\r\n<h4>Управление</h4>\r\n<p>Возможность управления заказами
+        и отслеживания статуса доставки. <a href=\"//www.checkout.ru/why/\" class=\"adv_link\">&nbsp;</a></p>\r\n</div>\r\n\r\n<div
+        class=\"adv\">\r\n<h4>Оптимизация</h4>\r\n<p>Простая, понятная и удобная для
+        клиента страница оформления заказов. <a href=\"//www.checkout.ru/why/\" class=\"adv_link\">&nbsp;</a></p>\r\n</div></div>\r\n\t\t\t\t\t\t\r\n\t\t\t\t<!--
+        /advantages -->\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t<!-- /ADVANTAGES -->\r\n\t\t<div
+        class=\"clear\">&nbsp;</div>\r\n\t</div>\r\n</div>\r\n<!-- /FOOTER LINE -->\r\n\r\n<!--
+        FOOTER -->\r\n<div class=\"footer\">\r\n\t<div class=\"layout\">\r\n\t\t<div
+        class=\"f_logo\"><img src=\"//www.checkout.ru/wp-content/themes/checkout/images/f_logo.png\"
+        alt=\"\"></div>\r\n\t\t\r\n\t\t<div class=\"f_addr\">\r\n\t\t\t<!-- ADDRESS
+        -->\r\n\t\t\t\t\t\t<div class=\"textwidget\"><span>+7 (495) 255-22-62, <a
+        href=\"mailto:info@checkout.ru\">info@checkout.ru</a></span><br>\r\nООО \"Чекаут\"
+        (ОГРН 1137746450082)<br>\r\n105062, Москва, ул. Покровка, д.28, стр.2<br></div>\r\n\t\t\t\t\t<!--
+        /ADDRESS -->\r\n\t\t</div>\r\n\t\t<div class=\"clear\">&nbsp;</div>\r\n\t\t<div
+        class=\"copy_left\">\r\n\t\t\t\t\t\t<div class=\"textwidget\">Copyright ©
+        2013 CheckOut.ru Все права защищены.</div>\r\n\t\t\t\t</div>\r\n\t\t\r\n\t\t<div
+        class=\"copy_right\">\r\n\t\t\t\t\t\t<div class=\"textwidget\">По вопросам,
+        связанным\r\nс партнёрством, свяжитесь с нами по адресу <a href=\"mailto:info@checkout.ru\">info@checkout.ru</a></div>\r\n\t\t\t\t</div>\r\n\t\t<div
+        class=\"clear\">&nbsp;</div>\r\n\t</div>\r\n</div>\r\n<!-- /FOOTER -->\r\n\r\n<!--
+        SLIDER -->\r\n<script type=\"text/javascript\" src=\"//www.checkout.ru/wp-content/themes/checkout/scripts/jquery-1.9.0.min.js\"></script>\r\n<script
+        type=\"text/javascript\" src=\"//www.checkout.ru/wp-content/themes/checkout/scripts/jquery.nivo.slider.js\"></script>\r\n<script
+        type=\"text/javascript\">\r\n$(window).load(function() {\r\n    $('#slider').nivoSlider({\r\n
+        \       effect: 'fade', // Specify sets like: 'fold,fade,sliceDown'\r\n        slices:
+        15, // For slice animations\r\n        boxCols: 8, // For box animations\r\n
+        \       boxRows: 4, // For box animations\r\n        animSpeed: 100, // Slide
+        transition speed\r\n        pauseTime: 4000, // How long each slide will show\r\n
+        \       startSlide: 0, // Set starting Slide (0 index)\r\n        directionNav:
+        false, // Next & Prev navigation\r\n        controlNav: true, // 1,2,3...
+        navigation\r\n        controlNavThumbs: false, // Use thumbnails for Control
+        Nav\r\n        pauseOnHover: true, // Stop animation while hovering\r\n        manualAdvance:
+        false, // Force manual transitions\r\n        prevText: 'Prev', // Prev directionNav
+        text\r\n        nextText: 'Next', // Next directionNav text\r\n        randomStart:
+        false, // Start on a random slide\r\n        beforeChange: function(){}, //
+        Triggers before a slide transition\r\n        afterChange: function(){}, //
+        Triggers after a slide transition\r\n        slideshowEnd: function(){}, //
+        Triggers after all slides have been shown\r\n        lastSlide: function(){},
+        // Triggers when last slide is shown\r\n        afterLoad: function(){} //
+        Triggers when slider has loaded\r\n    });\r\n});\r\n</script>\r\n<!-- /SLIDER
+        -->\r\n\r\n<!-- Yandex.Metrika counter -->\r\n<script type=\"text/javascript\">\r\nvar
+        yaParams = {/*Здесь параметры визита*/};\r\n</script>\r\n \r\n<script type=\"text/javascript\">\r\n(function
+        (d, w, c) {\r\n    (w[c] = w[c] || []).push(function() {\r\n        try {\r\n
+        \           w.yaCounter22719634 = new Ya.Metrika({id:22719634,\r\n                    webvisor:true,\r\n
+        \                   clickmap:true,\r\n                    trackLinks:true,\r\n
+        \                   accurateTrackBounce:true,params:window.yaParams||{ }});\r\n
+        \       } catch(e) { }\r\n    });\r\n \r\n    var n = d.getElementsByTagName(\"script\")[0],\r\n
+        \       s = d.createElement(\"script\"),\r\n        f = function () { n.parentNode.insertBefore(s,
+        n); };\r\n    s.type = \"text/javascript\";\r\n    s.async = true;\r\n    s.src
+        = (d.location.protocol == \"https:\" ? \"https:\" : \"\") + \"//mc.yandex.ru/metrika/watch.js\";\r\n
+        \r\n    if (w.opera == \"[object Opera]\") {\r\n        d.addEventListener(\"DOMContentLoaded\",
+        f, false);\r\n    } else { f(); }\r\n})(document, window, \"yandex_metrika_callbacks\");\r\n</script>\r\n<!--
+        /Yandex.Metrika counter --><script type=\"text/javascript\" src=\"//www.checkout.ru/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.45.0-2013.10.17\"></script>\r\n<script
+        type=\"text/javascript\">\r\n/* <![CDATA[ */\r\nvar _wpcf7 = {\"loaderUrl\":\"\\/\\/www.checkout.ru\\/wp-content\\/plugins\\/contact-form-7\\/images\\/ajax-loader.gif\",\"sending\":\"\\u041e\\u0442\\u043f\\u0440\\u0430\\u0432\\u043a\\u0430...\"};\r\n/*
+        ]]> */\r\n</script>\r\n<script type=\"text/javascript\" src=\"//www.checkout.ru/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=3.5.4\"></script>\r\n<script
+        type=\"text/javascript\" src=\"//www.checkout.ru/wp-content/plugins/email-subscription/assets/email-subscription.js?ver=1.0\"></script>\r\n<script
+        type=\"text/javascript\" src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/fancybox/jquery.fancybox-1.3.5.pack.js?ver=1.5.5\"></script>\r\n<script
+        type=\"text/javascript\" src=\"//www.checkout.ru/wp-content/plugins/easy-fancybox/jquery.mousewheel.pack.js?ver=3.1.3\"></script>\r\n\r\n<script
+        type=\"text/javascript\">\r\njQuery(document).on('ready post-load', easy_fancybox_handler
+        );\r\n</script>\r\n\r\n\r\n<div id=\"fancybox-tmp\"></div><div id=\"fancybox-loading\"><div></div></div><div
+        id=\"fancybox-overlay\"></div><div id=\"fancybox-wrap\"><div id=\"fancybox-outer\"><div
+        class=\"fancybox-bg\" id=\"fancybox-bg-n\"></div><div class=\"fancybox-bg\"
+        id=\"fancybox-bg-ne\"></div><div class=\"fancybox-bg\" id=\"fancybox-bg-e\"></div><div
+        class=\"fancybox-bg\" id=\"fancybox-bg-se\"></div><div class=\"fancybox-bg\"
+        id=\"fancybox-bg-s\"></div><div class=\"fancybox-bg\" id=\"fancybox-bg-sw\"></div><div
+        class=\"fancybox-bg\" id=\"fancybox-bg-w\"></div><div class=\"fancybox-bg\"
+        id=\"fancybox-bg-nw\"></div><div id=\"fancybox-content\"></div><a id=\"fancybox-close\"></a><div
+        id=\"fancybox-title\"></div><a href=\"javascript:;\" id=\"fancybox-left\"><span
+        class=\"fancy-ico\" id=\"fancybox-left-ico\"></span></a><a href=\"javascript:;\"
+        id=\"fancybox-right\"><span class=\"fancy-ico\" id=\"fancybox-right-ico\"></span></a></div></div></body></html>"
+    http_version: 
+  recorded_at: Mon, 06 Oct 2014 23:06:17 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/login/ticket/valid-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
       Accept:
       - application/json
   response:
     status:
       code: 200
-      message:
+      message: 
     headers:
-      date:
-      - Wed, 29 Jan 2014 22:29:52 GMT
       server:
-      - Apache/2.2.22 (Ubuntu)
-      connection:
-      - close
-      transfer-encoding:
-      - chunked
+      - nginx/1.7.5
+      date:
+      - Mon, 06 Oct 2014 23:07:35 GMT
       content-type:
       - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJpZCI6IjBjNWIyNDQ0LTcwYTAtNDkzMi05ODBjLWI0ZGMwZDNmMDJiNSIs
-        Im5hbWUiOiLQnNC+0YHQutCy0LAiLCJmdWxsTmFtZSI6ItCzLiDQnNC+0YHQ
-        utCy0LAifQ==
-    http_version:
-  recorded_at: Wed, 29 Jan 2014 22:31:39 GMT
+      encoding: UTF-8
+      string: '{"ticket":"e62abe6d79704ac392e541fd924e47e7", "receiverEmailNotRequired":false}'
+    http_version: 
+  recorded_at: Mon, 06 Oct 2014 23:06:17 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/checkout/getPlaceByPostalCode?postIndex=111524&ticket=e62abe6d79704ac392e541fd924e47e7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.5
+      date:
+      - Mon, 06 Oct 2014 23:07:35 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"id":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","name":"Москва","fullName":"г.
+        Москва"}'
+    http_version: 
+  recorded_at: Mon, 06 Oct 2014 23:06:17 GMT
 recorded_with: VCR 2.8.0
