@@ -1,5 +1,12 @@
 module CheckoutRu
   class Session
+    # Checkout.ru changed (broke) invalid ticket responses a few times. This
+    # matcher reflects all varieties of them.
+    INVALID_TICKET_RESPONSE_MATCHER = %r{
+      (?:is\s+expired\s+or\s+invalid|     # old working style
+       Сервис\s+временно\s+не\s+доступен) # broken style as of 10-06-14
+    }x.freeze
+
     class << self
       def initiate
         ticket = CheckoutRu.get_ticket
@@ -43,7 +50,6 @@ module CheckoutRu
     rescue Faraday::Error::ClientError => e
       if CheckoutRu.auto_renew_session &&
         session_renewal_count < 2 && expired_ticket_exception?(e)
-
         @ticket = CheckoutRu.get_ticket
         retry
       else
@@ -59,7 +65,8 @@ module CheckoutRu
       exception.respond_to?(:response) &&
         exception.response.respond_to?(:[]) &&
         exception.response[:status] == 500 &&
-        exception.response[:body] =~ /#{@ticket}\s+is\s+expired\s+or\s+invalid/
+        exception.response[:body].force_encoding('utf-8') =~
+          INVALID_TICKET_RESPONSE_MATCHER
     end
   end
 end
