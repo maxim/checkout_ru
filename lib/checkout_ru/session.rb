@@ -7,6 +7,8 @@ module CheckoutRu
        Сервис\s+временно\s+не\s+доступен) # broken style as of 10-06-14
     }x.freeze
 
+    TICKET_ERROR_RESPONSE_STATUSES = [400, 500].freeze
+
     class << self
       def initiate
         ticket = CheckoutRu.get_ticket
@@ -64,7 +66,7 @@ module CheckoutRu
     def expired_ticket_exception?(exception)
       exception.respond_to?(:response) &&
         exception.response.respond_to?(:[]) &&
-        exception.response[:status] == 500 &&
+        TICKET_ERROR_RESPONSE_STATUSES.include?(exception.response[:status]) &&
         exception.response[:body].force_encoding('utf-8') =~
           INVALID_TICKET_RESPONSE_MATCHER
     end

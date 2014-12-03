@@ -1,3 +1,7 @@
+## 0.4.1
+
+- Recognize 400 status as possibly expired ticket
+
 ## 0.4.0
 
 - Recognize checkout.ru "temporary unavailable" 500 page as expired ticket
