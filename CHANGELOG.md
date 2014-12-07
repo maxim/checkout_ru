@@ -1,3 +1,7 @@
+## 0.4.2
+
+- Support street property in Address (undocumented in 1.3 API, but legal to use)
+
 ## 0.4.1
 
 - Recognize 400 status as possibly expired ticket
