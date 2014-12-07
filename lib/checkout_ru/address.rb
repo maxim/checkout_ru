@@ -4,6 +4,7 @@ module CheckoutRu
   class Address < Entity
     property :postindex
     property :street_fias_id, :from => :streetFiasId
+    property :street
     property :house
     property :housing
     property :building
