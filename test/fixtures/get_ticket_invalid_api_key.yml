@@ -13,22 +13,301 @@ http_interactions:
       - application/json
   response:
     status:
-      code: 400
+      code: 200
       message: 
     headers:
       server:
-      - nginx/1.7.5
+      - nginx/1.7.7
       date:
-      - Mon, 06 Oct 2014 23:11:17 GMT
+      - Fri, 16 Jan 2015 19:23:44 GMT
       content-type:
-      - text/plain;charset=UTF-8
+      - application/json;charset=UTF-8
       transfer-encoding:
       - chunked
       connection:
       - close
     body:
       encoding: UTF-8
-      string: "Неверный идентификатор"
+      string: '{"error":true,"errorCode":3,"errorMessage":"Invalid apiKey"}'
     http_version: 
-  recorded_at: Mon, 06 Oct 2014 23:09:59 GMT
-recorded_with: VCR 2.8.0
+  recorded_at: Fri, 16 Jan 2015 19:23:44 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/login/ticket/invalid-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 19:26:26 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"error":true,"errorCode":3,"errorMessage":"Invalid apiKey"}'
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 19:26:26 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/login/ticket/invalid-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:03:29 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"error":true,"errorCode":3,"errorMessage":"Invalid apiKey"}'
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:03:29 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/login/ticket/invalid-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:11:46 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"error":true,"errorCode":3,"errorMessage":"Invalid apiKey"}'
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:11:46 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/login/ticket/invalid-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:12:41 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"error":true,"errorCode":3,"errorMessage":"Invalid apiKey"}'
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:12:41 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/login/ticket/invalid-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:13:48 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"error":true,"errorCode":3,"errorMessage":"Invalid apiKey"}'
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:13:48 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/login/ticket/invalid-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:15:04 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"error":true,"errorCode":3,"errorMessage":"Invalid apiKey"}'
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:15:04 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/login/ticket/invalid-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:15:16 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"error":true,"errorCode":3,"errorMessage":"Invalid apiKey"}'
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:15:16 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/login/ticket/invalid-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:25:39 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"error":true,"errorCode":3,"errorMessage":"Invalid apiKey"}'
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:25:39 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/login/ticket/invalid-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:25:50 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"error":true,"errorCode":3,"errorMessage":"Invalid apiKey"}'
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:25:50 GMT
+recorded_with: VCR 2.9.3

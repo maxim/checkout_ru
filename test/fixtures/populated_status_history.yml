@@ -14,57 +14,61 @@ http_interactions:
   response:
     status:
       code: 200
-      message:
+      message: 
     headers:
-      date:
-      - Sat, 01 Feb 2014 20:58:07 GMT
       server:
-      - Apache/2.2.22 (Ubuntu)
-      connection:
-      - close
-      transfer-encoding:
-      - chunked
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 19:26:27 GMT
       content-type:
       - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        ewoib3JkZXIiOnsKImlkIjoiNjQiLCAKImRhdGUiOiIxNC4xMC4yMDEzIiwg
-        CiJ0b3RhbENvc3QiOjExMzYuMzMsIAoiYXBwcm94aW1hdGVEZWxpdmVyeURh
-        dGUiOm51bGx9LCJ1c2VyIjp7CiJmdWxsbmFtZSI6ItCy0LLQsiIsIAoiYWRk
-        cmVzcyI6ewoicG9zdGluZGV4IjpudWxsLCAKInBsYWNlIjoi0LMuINCS0L7Q
-        u9Cz0L7Qs9GA0LDQtCAo0JLQvtC70LPQvtCz0YDQsNC00YHQutCw0Y8g0L7Q
-        sdC70LDRgdGC0YwpIiwKInN0cmVldCI6IiIsCiJob3VzZSI6bnVsbCwgCiJo
-        b3VzaW5nIjpudWxsLCAKImJ1aWxkaW5nIjpudWxsLCAKImFwcGFydG1lbnQi
-        Om51bGx9fSwiZGVsaXZlcnlOYW1lIjoiRFBEIiwgImRlbGl2ZXJ5SGlzdG9y
-        eSIgOiBbCgp7CiJzdGF0dXMiOiLQn9C+0YHRi9C70LrQsCDQvdCw0YXQvtC0
-        0LjRgtGB0Y8g0L3QsCDRgtC10YDQvNC40L3QsNC70LUgRFBELCDQutC+0YLQ
-        vtGA0YvQuSDQvtGB0YPRidC10YHRgtCy0LvRj9C7INC10ZEg0L/RgNC40ZHQ
-        vCDRgyDQvtGC0L/RgNCw0LLQuNGC0LXQu9GPIiwKImRhdGUiOiIxMC4wOS4y
-        MDEzIDE3OjE5OjEzIgp9LAoKewoic3RhdHVzIjoi0J/QvtGB0YvQu9C60LAg
-        0LTQvtGB0YLQsNCy0LvRj9C10YLRgdGPINC/0L4g0LzQtdC20LTRg9Cz0L7R
-        gNC+0LTQvdC10Lkg0YHQtdGC0LggRFBEIiwKImRhdGUiOiIxMC4wOS4yMDEz
-        IDE5OjMxOjQ3Igp9LAoKewoic3RhdHVzIjoi0J/QvtGB0YvQu9C60LAg0L3Q
-        sNGF0L7QtNC40YLRgdGPINC90LAg0YLRgNCw0L3Qt9C40YLQvdC+0Lwg0YLQ
-        tdGA0LzQuNC90LDQu9C1IERQRCIsCiJkYXRlIjoiMTAuMDkuMjAxMyAyMjoy
-        NDowMyIKfSwKCnsKInN0YXR1cyI6ItCf0L7RgdGL0LvQutCwINC00L7RgdGC
-        0LDQstC70Y/QtdGC0YHRjyDQv9C+INC80LXQttC00YPQs9C+0YDQvtC00L3Q
-        tdC5INGB0LXRgtC4IERQRCIsCiJkYXRlIjoiMTEuMDkuMjAxMyAwMjoyMDo1
-        NyIKfSwKCnsKInN0YXR1cyI6ItCf0L7RgdGL0LvQutCwINC90LDRhdC+0LTQ
-        uNGC0YHRjyDQvdCwINGC0YDQsNC90LfQuNGC0L3QvtC8INGC0LXRgNC80LjQ
-        vdCw0LvQtSBEUEQiLAoiZGF0ZSI6IjExLjA5LjIwMTMgMDg6NTg6MDUiCn0s
-        Cgp7CiJzdGF0dXMiOiLQn9C+0YHRi9C70LrQsCDQtNC+0YHRgtCw0LLQu9GP
-        0LXRgtGB0Y8g0L/QviDQvNC10LbQtNGD0LPQvtGA0L7QtNC90LXQuSDRgdC1
-        0YLQuCBEUEQiLAoiZGF0ZSI6IjExLjA5LjIwMTMgMTE6MjA6NDYiCn0sCgp7
-        CiJzdGF0dXMiOiLQn9C+0YHRi9C70LrQsCDQvdCw0YXQvtC00LjRgtGB0Y8g
-        0L3QsCDRgtC10YDQvNC40L3QsNC70LUgRFBELCDQutC+0YLQvtGA0YvQuSDQ
-        vtGB0YPRidC10YHRgtCy0LvRj9C10YIg0LXRkSDQtNC+0YHRgtCw0LLQutGD
-        INC/0L7Qu9GD0YfQsNGC0LXQu9GOIiwKImRhdGUiOiIxMi4wOS4yMDEzIDEy
-        OjI3OjEwIgp9LAoKewoic3RhdHVzIjoi0J/QvtGB0YvQu9C60LAg0LTQvtGB
-        0YLQsNCy0LvRj9C10YLRgdGPINC/0L7Qu9GD0YfQsNGC0LXQu9GOIiwKImRh
-        dGUiOiIxMi4wOS4yMDEzIDE3OjIxOjI4Igp9LAoKewoic3RhdHVzIjoi0J/Q
-        vtGB0YvQu9C60LAg0LTQvtGB0YLQsNCy0LvQtdC90LAiLAoiZGF0ZSI6IjE2
-        LjA5LjIwMTMgMTQ6MTA6MDAiCn0KCl0KfQ==
-    http_version:
-  recorded_at: Sat, 01 Feb 2014 20:59:19 GMT
-recorded_with: VCR 2.8.0
+      encoding: UTF-8
+      string: '{"error":true,"errorCode":3,"errorMessage":"Order not found"}'
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 19:26:27 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/order/statushistory/44391?apiKey=valid-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:25:50 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      content-length:
+      - '894'
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: "{\n\"order\":{\n\"id\":\"33195\", \n\"date\":\"7.10.2014\", \n\"totalCost\":1320.0,
+        \n\"approximateDeliveryDate\":null},\"user\":{\n\"fullname\":\"Ольга Суржик\",
+        \n\"address\":{\n\"postindex\":\"173015\", \n\"place\":\"г. Великий Новгород
+        (Новгородская область)\",\n\"street\":\"ул. Псковская\",\n\"house\":\"40\",
+        \n\"housing\":\"\", \n\"building\":\"2\", \n\"appartment\":\"7\"}},\"deliveryName\":\"SPSR\",
+        \"deliveryHistory\" : [\n\n{\n\"status\":\"Москва - Хранилище неперерегистрированного\",\n\"date\":\"07.10.2014
+        17:01:00\"\n},\n\n{\n\"status\":\"Подтвержден\",\n\"date\":\"07.10.2014 19:15:48\"\n},\n\n{\n\"status\":\"Заказ
+        прибыл от отправителя в СД и находится на терминале отправления\",\n\"date\":\"08.10.2014
+        17:06:00\"\n},\n\n{\n\"status\":\"Заказ получен покупателем\",\n\"date\":\"16.10.2014
+        16:25:00\"\n}\n\n]\n}"
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:25:50 GMT
+recorded_with: VCR 2.9.3

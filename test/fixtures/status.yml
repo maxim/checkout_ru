@@ -2,42 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://platform.checkout.ru/service/order/create
-    body:
-      encoding: UTF-8
-      string: '{"order":{"goods":[{"name":"blue tshirt","code":"blt","variantCode":"blue","quantity":2,"assessedCost":1000,"payCost":750,"weight":0.5}],"delivery":{"deliveryId":2,"placeFiasId":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","addressPvz":"1-я
-        Квесисская улица, 18","type":"postamat","cost":230,"minTerm":1,"maxTerm":2},"user":{"fullname":"Test
-        Order","email":"testorder@example.com","phone":"555"},"comment":"TEST ORDER","shopOrderId":"12","paymentMethod":"cash"},"apiKey":"valid-api-key"}'
-    headers:
-      User-Agent:
-      - Faraday v0.8.9
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      server:
-      - nginx/1.7.5
-      date:
-      - Tue, 07 Oct 2014 00:55:40 GMT
-      content-type:
-      - application/json;charset=UTF-8
-      transfer-encoding:
-      - chunked
-      connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"order":{"id":32857},"delivery":{"id":2,"serviceName":"PickPoint","cost":"230.0"}}'
-    http_version: 
-  recorded_at: Tue, 07 Oct 2014 00:54:21 GMT
-- request:
-    method: post
-    uri: http://platform.checkout.ru/service/order/status/32857
+    uri: http://platform.checkout.ru/service/order/status/87991
     body:
       encoding: UTF-8
       string: '{"status":"CANCELLED_BEFORE_SHIPMENT","apiKey":"valid-api-key"}'
@@ -54,9 +19,9 @@ http_interactions:
       message: 
     headers:
       server:
-      - nginx/1.7.5
+      - nginx/1.7.7
       date:
-      - Tue, 07 Oct 2014 00:55:40 GMT
+      - Fri, 16 Jan 2015 19:26:27 GMT
       transfer-encoding:
       - chunked
       connection:
@@ -65,5 +30,226 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Tue, 07 Oct 2014 00:54:22 GMT
-recorded_with: VCR 2.8.0
+  recorded_at: Fri, 16 Jan 2015 19:26:27 GMT
+- request:
+    method: post
+    uri: http://platform.checkout.ru/service/order/status/88015
+    body:
+      encoding: UTF-8
+      string: '{"status":"CANCELLED_BEFORE_SHIPMENT","apiKey":"valid-api-key"}'
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:03:32 GMT
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:03:32 GMT
+- request:
+    method: post
+    uri: http://platform.checkout.ru/service/order/status/88025
+    body:
+      encoding: UTF-8
+      string: '{"status":"CANCELLED_BEFORE_SHIPMENT","apiKey":"valid-api-key"}'
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:11:46 GMT
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:11:46 GMT
+- request:
+    method: post
+    uri: http://platform.checkout.ru/service/order/status/88033
+    body:
+      encoding: UTF-8
+      string: '{"status":"CANCELLED_BEFORE_SHIPMENT","apiKey":"valid-api-key"}'
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:15:06 GMT
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:15:06 GMT
+- request:
+    method: post
+    uri: http://platform.checkout.ru/service/order/status/88041
+    body:
+      encoding: UTF-8
+      string: '{"status":"CANCELLED_BEFORE_SHIPMENT","apiKey":"valid-api-key"}'
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:15:19 GMT
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:15:19 GMT
+- request:
+    method: post
+    uri: http://platform.checkout.ru/service/order/status/88049
+    body:
+      encoding: UTF-8
+      string: '{"status":"CANCELLED_BEFORE_SHIPMENT","apiKey":"valid-api-key"}'
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:25:39 GMT
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:25:39 GMT
+- request:
+    method: post
+    uri: http://platform.checkout.ru/service/order/create
+    body:
+      encoding: UTF-8
+      string: '{"order":{"goods":[{"name":"blue tshirt","code":"blt","variantCode":"blue","quantity":2,"assessedCost":1000,"payCost":750,"weight":0.5}],"delivery":{"deliveryId":2,"placeFiasId":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","addressPvz":"1-я
+        Квесисская улица, 18","type":"postamat","cost":250,"minTerm":1,"maxTerm":2},"user":{"fullname":"Test
+        Order","email":"testorder@example.com","phone":"555"},"comment":"TEST ORDER","paymentMethod":"cash"},"apiKey":"valid-api-key"}'
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:25:51 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"order":{"id":88057},"delivery":{"id":2,"serviceName":"PickPoint","cost":"250.0"}}'
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:25:51 GMT
+- request:
+    method: post
+    uri: http://platform.checkout.ru/service/order/status/88057
+    body:
+      encoding: UTF-8
+      string: '{"status":"CANCELLED_BEFORE_SHIPMENT","apiKey":"valid-api-key"}'
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:25:51 GMT
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:25:51 GMT
+recorded_with: VCR 2.9.3

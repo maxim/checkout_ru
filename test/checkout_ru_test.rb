@@ -20,7 +20,7 @@ class CheckoutRuTest < MiniTest::Test
         :place_fias_id => '0c5b2444-70a0-4932-980c-b4dc0d3f02b5',
         :address_pvz   => '1-я Квесисская улица, 18',
         :type          => 'postamat',
-        :cost          => 230,
+        :cost          => 250,
         :min_term      => 1,
         :max_term      => 2
       ),
@@ -54,11 +54,9 @@ class CheckoutRuTest < MiniTest::Test
     end
   end
 
-  def test_get_ticket_with_invalid_api_key_raises_client_error
+  def test_get_ticket_with_invalid_api_key_returns_nil
     VCR.use_cassette('get_ticket_invalid_api_key') do
-      assert_raises Faraday::Error::ClientError do
-        CheckoutRu.get_ticket(:api_key => 'invalid-api-key')
-      end
+      assert_equal CheckoutRu.get_ticket(:api_key => 'invalid-api-key'), nil
     end
   end
 
@@ -73,6 +71,8 @@ class CheckoutRuTest < MiniTest::Test
     end
   end
 
+  # Test is broken. Request on update returns error status without description.
+  #    Must be discussed in skype with support.
   def test_update_order
     VCR.use_cassette('update_order') do
       id = create_order
@@ -112,23 +112,22 @@ class CheckoutRuTest < MiniTest::Test
 
   def test_populated_status_history
     VCR.use_cassette('populated_status_history') do
-      response = CheckoutRu.status_history(64)
+      response = CheckoutRu.status_history(44391)
 
-      assert_equal '64', response.order.id
-      assert_equal Date.parse('2013-10-14'), response.order.date
-      assert_equal 1136.33, response.order.total_cost
+      assert_equal '33195', response.order.id
+      assert_equal Date.parse('2014-10-07'), response.order.date
+      assert_equal 1320.0, response.order.total_cost
       assert_equal nil, response.order.approximate_delivery_date
 
-      assert_equal 'ввв', response.user.fullname
-      assert_equal 'г. Волгоград (Волгоградская область)',
+      assert_equal 'Ольга Суржик', response.user.fullname
+      assert_equal 'г. Великий Новгород (Новгородская область)',
         response.user.address.place
 
-      assert_equal 'DPD', response.delivery_name
+      assert_equal 'SPSR', response.delivery_name
 
-      assert_equal 9, response.delivery_history.size
-      assert_equal 'Посылка находится на терминале DPD, который осуществлял ' +
-        'её приём у отправителя', response.delivery_history[0].status
-      assert_equal '10.09.2013 17:19:13', response.delivery_history[0].date
+      assert_equal 4, response.delivery_history.size
+      assert_equal 'Москва - Хранилище неперерегистрированного', response.delivery_history[0].status
+      assert_equal '07.10.2014 17:01:00', response.delivery_history[0].date
     end
   end
 end

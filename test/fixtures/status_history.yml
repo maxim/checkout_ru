@@ -1,43 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: http://platform.checkout.ru/service/order/create
-    body:
-      encoding: UTF-8
-      string: '{"order":{"goods":[{"name":"blue tshirt","code":"blt","variantCode":"blue","quantity":2,"assessedCost":1000,"payCost":750,"weight":0.5}],"delivery":{"deliveryId":2,"placeFiasId":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","addressPvz":"1-я
-        Квесисская улица, 18","type":"postamat","cost":230,"minTerm":1,"maxTerm":2},"user":{"fullname":"Test
-        Order","email":"testorder@example.com","phone":"555"},"comment":"TEST ORDER","paymentMethod":"cash"},"apiKey":"valid-api-key"}'
-    headers:
-      User-Agent:
-      - Faraday v0.8.9
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      server:
-      - nginx/1.7.5
-      date:
-      - Tue, 07 Oct 2014 01:07:03 GMT
-      content-type:
-      - application/json;charset=UTF-8
-      transfer-encoding:
-      - chunked
-      connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"order":{"id":32873},"delivery":{"id":2,"serviceName":"PickPoint","cost":"230.0"}}'
-    http_version: 
-  recorded_at: Tue, 07 Oct 2014 01:05:45 GMT
-- request:
     method: get
-    uri: http://platform.checkout.ru/service/order/statushistory/32873?apiKey=valid-api-key
+    uri: http://platform.checkout.ru/service/order/statushistory/87989?apiKey=valid-api-key
     body:
       encoding: US-ASCII
       string: ''
@@ -52,9 +17,223 @@ http_interactions:
       message: 
     headers:
       server:
-      - nginx/1.7.5
+      - nginx/1.7.7
       date:
-      - Tue, 07 Oct 2014 01:07:03 GMT
+      - Fri, 16 Jan 2015 19:26:26 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      content-length:
+      - '333'
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: "{\n\"order\":{\n\"id\":\"87989\", \n\"date\":\"16.01.2015\", \n\"totalCost\":1750.0,
+        \n\"approximateDeliveryDate\":null},\"user\":{\n\"fullname\":\"Test Order\",
+        \n\"address\":{\n\"postindex\":null, \n\"place\":\"г. Москва\",\n\"street\":\"\",\n\"house\":null,
+        \n\"housing\":null, \n\"building\":null, \n\"appartment\":null}},\"deliveryName\":\"PickPoint\",
+        \"deliveryHistory\" : [\n\n]\n}"
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 19:26:26 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/order/statushistory/88011?apiKey=valid-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:03:30 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      content-length:
+      - '333'
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: "{\n\"order\":{\n\"id\":\"88011\", \n\"date\":\"16.01.2015\", \n\"totalCost\":1750.0,
+        \n\"approximateDeliveryDate\":null},\"user\":{\n\"fullname\":\"Test Order\",
+        \n\"address\":{\n\"postindex\":null, \n\"place\":\"г. Москва\",\n\"street\":\"\",\n\"house\":null,
+        \n\"housing\":null, \n\"building\":null, \n\"appartment\":null}},\"deliveryName\":\"PickPoint\",
+        \"deliveryHistory\" : [\n\n]\n}"
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:03:30 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/order/statushistory/88023?apiKey=valid-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:11:45 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      content-length:
+      - '333'
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: "{\n\"order\":{\n\"id\":\"88023\", \n\"date\":\"16.01.2015\", \n\"totalCost\":1750.0,
+        \n\"approximateDeliveryDate\":null},\"user\":{\n\"fullname\":\"Test Order\",
+        \n\"address\":{\n\"postindex\":null, \n\"place\":\"г. Москва\",\n\"street\":\"\",\n\"house\":null,
+        \n\"housing\":null, \n\"building\":null, \n\"appartment\":null}},\"deliveryName\":\"PickPoint\",
+        \"deliveryHistory\" : [\n\n]\n}"
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:11:45 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/order/statushistory/88027?apiKey=valid-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:12:34 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      content-length:
+      - '333'
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: "{\n\"order\":{\n\"id\":\"88027\", \n\"date\":\"16.01.2015\", \n\"totalCost\":1750.0,
+        \n\"approximateDeliveryDate\":null},\"user\":{\n\"fullname\":\"Test Order\",
+        \n\"address\":{\n\"postindex\":null, \n\"place\":\"г. Москва\",\n\"street\":\"\",\n\"house\":null,
+        \n\"housing\":null, \n\"building\":null, \n\"appartment\":null}},\"deliveryName\":\"PickPoint\",
+        \"deliveryHistory\" : [\n\n]\n}"
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:12:34 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/order/statushistory/88039?apiKey=valid-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:15:18 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      content-length:
+      - '333'
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: "{\n\"order\":{\n\"id\":\"88039\", \n\"date\":\"16.01.2015\", \n\"totalCost\":1750.0,
+        \n\"approximateDeliveryDate\":null},\"user\":{\n\"fullname\":\"Test Order\",
+        \n\"address\":{\n\"postindex\":null, \n\"place\":\"г. Москва\",\n\"street\":\"\",\n\"house\":null,
+        \n\"housing\":null, \n\"building\":null, \n\"appartment\":null}},\"deliveryName\":\"PickPoint\",
+        \"deliveryHistory\" : [\n\n]\n}"
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:15:18 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/order/statushistory/88047?apiKey=valid-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:25:38 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      content-length:
+      - '333'
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: "{\n\"order\":{\n\"id\":\"88047\", \n\"date\":\"16.01.2015\", \n\"totalCost\":1750.0,
+        \n\"approximateDeliveryDate\":null},\"user\":{\n\"fullname\":\"Test Order\",
+        \n\"address\":{\n\"postindex\":null, \n\"place\":\"г. Москва\",\n\"street\":\"\",\n\"house\":null,
+        \n\"housing\":null, \n\"building\":null, \n\"appartment\":null}},\"deliveryName\":\"PickPoint\",
+        \"deliveryHistory\" : [\n\n]\n}"
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:25:38 GMT
+- request:
+    method: post
+    uri: http://platform.checkout.ru/service/order/create
+    body:
+      encoding: UTF-8
+      string: '{"order":{"goods":[{"name":"blue tshirt","code":"blt","variantCode":"blue","quantity":2,"assessedCost":1000,"payCost":750,"weight":0.5}],"delivery":{"deliveryId":2,"placeFiasId":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","addressPvz":"1-я
+        Квесисская улица, 18","type":"postamat","cost":250,"minTerm":1,"maxTerm":2},"user":{"fullname":"Test
+        Order","email":"testorder@example.com","phone":"555"},"comment":"TEST ORDER","paymentMethod":"cash"},"apiKey":"valid-api-key"}'
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:25:50 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -63,11 +242,42 @@ http_interactions:
       - close
     body:
       encoding: UTF-8
-      string: "{\n\"order\":{\n\"id\":\"32873\", \n\"date\":\"7.10.2014\", \n\"totalCost\":1730.0,
+      string: '{"order":{"id":88055},"delivery":{"id":2,"serviceName":"PickPoint","cost":"250.0"}}'
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:25:50 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/order/statushistory/88055?apiKey=valid-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:25:50 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      content-length:
+      - '333'
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: "{\n\"order\":{\n\"id\":\"88055\", \n\"date\":\"16.01.2015\", \n\"totalCost\":1750.0,
         \n\"approximateDeliveryDate\":null},\"user\":{\n\"fullname\":\"Test Order\",
         \n\"address\":{\n\"postindex\":null, \n\"place\":\"г. Москва\",\n\"street\":\"\",\n\"house\":null,
         \n\"housing\":null, \n\"building\":null, \n\"appartment\":null}},\"deliveryName\":\"PickPoint\",
         \"deliveryHistory\" : [\n\n]\n}"
     http_version: 
-  recorded_at: Tue, 07 Oct 2014 01:05:45 GMT
-recorded_with: VCR 2.8.0
+  recorded_at: Fri, 16 Jan 2015 20:25:50 GMT
+recorded_with: VCR 2.9.3

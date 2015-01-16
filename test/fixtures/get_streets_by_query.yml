@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://platform.checkout.ru/service/checkout/getStreetsByQuery?street=%D0%BC%D0%B0%D1%81&placeId=0c5b2444-70a0-4932-980c-b4dc0d3f02b5&ticket=c77392a5023b556af62788817e9971a6
+    uri: http://platform.checkout.ru/service/checkout/getStreetsByQuery?street=%D0%BC%D0%B0%D1%81&placeId=0c5b2444-70a0-4932-980c-b4dc0d3f02b5&ticket=0167d23a2ff171faafa798aec81c14eb
     body:
       encoding: US-ASCII
       string: ''
@@ -17,9 +17,9 @@ http_interactions:
       message: 
     headers:
       server:
-      - nginx/1.7.5
+      - nginx/1.7.7
       date:
-      - Mon, 06 Oct 2014 23:06:31 GMT
+      - Fri, 16 Jan 2015 19:23:29 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -32,7 +32,205 @@ http_interactions:
         Верхн.","type":"ул"},{"id":"ad4b99f0-33da-4661-aa29-057557cf4147","name":"Масловка
         Нижн.","type":"ул"},{"id":"0bc0e187-c55b-4ef9-bd0e-6c23683a1270","name":"Мастеркова","type":"ул"},{"id":"2b453e3c-d908-4608-b81c-a314a687bee3","name":"Мастеровая","type":"ул"}]}'
     http_version: 
-  recorded_at: Mon, 06 Oct 2014 23:05:13 GMT
+  recorded_at: Fri, 16 Jan 2015 19:23:29 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/checkout/getStreetsByQuery?street=%D0%BC%D0%B0%D1%81&placeId=0c5b2444-70a0-4932-980c-b4dc0d3f02b5&ticket=445b1acc7168d445532f267567a6eb63
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 19:26:24 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"suggestions":[{"id":"960972e8-48bb-4837-b0ee-ee0347931b73","name":"Масловка
+        Верхн.","type":"ул"},{"id":"ad4b99f0-33da-4661-aa29-057557cf4147","name":"Масловка
+        Нижн.","type":"ул"},{"id":"0bc0e187-c55b-4ef9-bd0e-6c23683a1270","name":"Мастеркова","type":"ул"},{"id":"2b453e3c-d908-4608-b81c-a314a687bee3","name":"Мастеровая","type":"ул"}]}'
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 19:26:24 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/checkout/getStreetsByQuery?street=%D0%BC%D0%B0%D1%81&placeId=0c5b2444-70a0-4932-980c-b4dc0d3f02b5&ticket=d432f8e79f9e85ed39606a8369f258bb
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:03:28 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"suggestions":[{"id":"960972e8-48bb-4837-b0ee-ee0347931b73","name":"Масловка
+        Верхн.","type":"ул"},{"id":"ad4b99f0-33da-4661-aa29-057557cf4147","name":"Масловка
+        Нижн.","type":"ул"},{"id":"0bc0e187-c55b-4ef9-bd0e-6c23683a1270","name":"Мастеркова","type":"ул"},{"id":"2b453e3c-d908-4608-b81c-a314a687bee3","name":"Мастеровая","type":"ул"}]}'
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:03:28 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/checkout/getStreetsByQuery?street=%D0%BC%D0%B0%D1%81&placeId=0c5b2444-70a0-4932-980c-b4dc0d3f02b5&ticket=827979cb889a4a9b83b79620d6989fc3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:06:25 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"suggestions":[{"id":"960972e8-48bb-4837-b0ee-ee0347931b73","name":"Масловка
+        Верхн.","type":"ул"},{"id":"ad4b99f0-33da-4661-aa29-057557cf4147","name":"Масловка
+        Нижн.","type":"ул"},{"id":"0bc0e187-c55b-4ef9-bd0e-6c23683a1270","name":"Мастеркова","type":"ул"},{"id":"2b453e3c-d908-4608-b81c-a314a687bee3","name":"Мастеровая","type":"ул"}]}'
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:06:25 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/checkout/getStreetsByQuery?street=%D0%BC%D0%B0%D1%81&placeId=0c5b2444-70a0-4932-980c-b4dc0d3f02b5&ticket=dc6ee558b6cd6d273a0cf45b074317db
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:15:07 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"suggestions":[{"id":"960972e8-48bb-4837-b0ee-ee0347931b73","name":"Масловка
+        Верхн.","type":"ул"},{"id":"ad4b99f0-33da-4661-aa29-057557cf4147","name":"Масловка
+        Нижн.","type":"ул"},{"id":"0bc0e187-c55b-4ef9-bd0e-6c23683a1270","name":"Мастеркова","type":"ул"},{"id":"2b453e3c-d908-4608-b81c-a314a687bee3","name":"Мастеровая","type":"ул"}]}'
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:15:07 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/checkout/getStreetsByQuery?street=%D0%BC%D0%B0%D1%81&placeId=0c5b2444-70a0-4932-980c-b4dc0d3f02b5&ticket=3e6f4af929fb806da07baedc815d51c1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:15:19 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"suggestions":[{"id":"960972e8-48bb-4837-b0ee-ee0347931b73","name":"Масловка
+        Верхн.","type":"ул"},{"id":"ad4b99f0-33da-4661-aa29-057557cf4147","name":"Масловка
+        Нижн.","type":"ул"},{"id":"0bc0e187-c55b-4ef9-bd0e-6c23683a1270","name":"Мастеркова","type":"ул"},{"id":"2b453e3c-d908-4608-b81c-a314a687bee3","name":"Мастеровая","type":"ул"}]}'
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:15:19 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/checkout/getStreetsByQuery?street=%D0%BC%D0%B0%D1%81&placeId=0c5b2444-70a0-4932-980c-b4dc0d3f02b5&ticket=2b366916b477d5ad24e125ff872c5f52
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Fri, 16 Jan 2015 20:17:18 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"suggestions":[{"id":"960972e8-48bb-4837-b0ee-ee0347931b73","name":"Масловка
+        Верхн.","type":"ул"},{"id":"ad4b99f0-33da-4661-aa29-057557cf4147","name":"Масловка
+        Нижн.","type":"ул"},{"id":"0bc0e187-c55b-4ef9-bd0e-6c23683a1270","name":"Мастеркова","type":"ул"},{"id":"2b453e3c-d908-4608-b81c-a314a687bee3","name":"Мастеровая","type":"ул"}]}'
+    http_version: 
+  recorded_at: Fri, 16 Jan 2015 20:17:18 GMT
 - request:
     method: get
     uri: http://platform.checkout.ru/service/checkout/getStreetsByQuery?street=%D0%BC%D0%B0%D1%81&placeId=0c5b2444-70a0-4932-980c-b4dc0d3f02b5&ticket=tests-will-autorequest-a-valid-ticket
@@ -46,39 +244,25 @@ http_interactions:
       - application/json
   response:
     status:
-      code: 500
+      code: 200
       message: 
     headers:
       server:
-      - nginx/1.7.5
+      - nginx/1.7.7
       date:
-      - Tue, 07 Oct 2014 18:42:32 GMT
+      - Fri, 16 Jan 2015 20:25:45 GMT
       content-type:
-      - text/html;charset=utf-8
-      content-length:
-      - '1209'
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
       connection:
       - close
-      content-language:
-      - en
     body:
       encoding: UTF-8
-      string: '<html><head><title>Apache Tomcat/7.0.52 (Ubuntu) - Error report</title><style><!--H1
-        {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;}
-        H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;}
-        H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;}
-        BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;}
-        B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;}
-        P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A
-        {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP
-        Status 500 - Unable to find shop by ticket. Ticket tests-will-autorequest-a-valid-ticket
-        is expired or invalid</h1><HR size="1" noshade="noshade"><p><b>type</b> Status
-        report</p><p><b>message</b> <u>Unable to find shop by ticket. Ticket tests-will-autorequest-a-valid-ticket
-        is expired or invalid</u></p><p><b>description</b> <u>The server encountered
-        an internal error that prevented it from fulfilling this request.</u></p><HR
-        size="1" noshade="noshade"><h3>Apache Tomcat/7.0.52 (Ubuntu)</h3></body></html>'
+      string: '{"error":true,"errorCode":3,"errorMessage":"ticket: ticket is expired
+        or invalid; "}'
     http_version: 
-  recorded_at: Tue, 07 Oct 2014 18:41:09 GMT
+  recorded_at: Fri, 16 Jan 2015 20:25:45 GMT
 - request:
     method: get
     uri: http://platform.checkout.ru/service/login/ticket/valid-api-key
@@ -96,23 +280,23 @@ http_interactions:
       message: 
     headers:
       server:
-      - nginx/1.7.5
+      - nginx/1.7.7
       date:
-      - Tue, 07 Oct 2014 18:42:32 GMT
+      - Fri, 16 Jan 2015 20:25:45 GMT
       content-type:
       - application/json;charset=UTF-8
-      transfer-encoding:
-      - chunked
+      content-length:
+      - '79'
       connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"ticket":"f7903a07d7ceb5c8fb47e9922a9a1b90", "receiverEmailNotRequired":false}'
+      string: '{"ticket":"e63490dda008c9af155677a80d868a7d", "receiverEmailNotRequired":false}'
     http_version: 
-  recorded_at: Tue, 07 Oct 2014 18:41:09 GMT
+  recorded_at: Fri, 16 Jan 2015 20:25:45 GMT
 - request:
     method: get
-    uri: http://platform.checkout.ru/service/checkout/getStreetsByQuery?street=%D0%BC%D0%B0%D1%81&placeId=0c5b2444-70a0-4932-980c-b4dc0d3f02b5&ticket=f7903a07d7ceb5c8fb47e9922a9a1b90
+    uri: http://platform.checkout.ru/service/checkout/getStreetsByQuery?street=%D0%BC%D0%B0%D1%81&placeId=0c5b2444-70a0-4932-980c-b4dc0d3f02b5&ticket=e63490dda008c9af155677a80d868a7d
     body:
       encoding: US-ASCII
       string: ''
@@ -127,9 +311,9 @@ http_interactions:
       message: 
     headers:
       server:
-      - nginx/1.7.5
+      - nginx/1.7.7
       date:
-      - Tue, 07 Oct 2014 18:42:32 GMT
+      - Fri, 16 Jan 2015 20:25:45 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -142,5 +326,5 @@ http_interactions:
         Верхн.","type":"ул"},{"id":"ad4b99f0-33da-4661-aa29-057557cf4147","name":"Масловка
         Нижн.","type":"ул"},{"id":"0bc0e187-c55b-4ef9-bd0e-6c23683a1270","name":"Мастеркова","type":"ул"},{"id":"2b453e3c-d908-4608-b81c-a314a687bee3","name":"Мастеровая","type":"ул"}]}'
     http_version: 
-  recorded_at: Tue, 07 Oct 2014 18:41:09 GMT
-recorded_with: VCR 2.8.0
+  recorded_at: Fri, 16 Jan 2015 20:25:45 GMT
+recorded_with: VCR 2.9.3

@@ -8,7 +8,7 @@ class CheckoutRu::SessionTest < MiniTest::Test
   def test_request_options_are_passed_through_to_faraday
     CheckoutRu.expects(:make_request).once.with(
       '/service/checkout/calculation', has_entry(:request, { :timeout => 5 })
-    )
+    ).returns({})
     @session.calculation({}, :request => { :timeout => 5 })
   end
 
