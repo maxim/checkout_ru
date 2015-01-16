@@ -2,12 +2,8 @@ module CheckoutRu
   class Session
     # Checkout.ru changed (broke) invalid ticket responses a few times. This
     # matcher reflects all varieties of them.
-    INVALID_TICKET_RESPONSE_MATCHER = %r{
-      (?:is\s+expired\s+or\s+invalid|     # old working style
-       Сервис\s+временно\s+не\s+доступен) # broken style as of 10-06-14
-    }x.freeze
-
-    TICKET_ERROR_RESPONSE_STATUSES = [400, 500].freeze
+    INVALID_TICKET_RESPONSE_MATCHER = /is\s+expired\s+or\s+invalid/x.freeze
+    INVALID_TICKET_RESPONSE_CODE = 3
 
     class << self
       def initiate
@@ -44,18 +40,17 @@ module CheckoutRu
 
     private
     def get(service, params = {}, options = {})
-      session_renewal_count ||= 0
-      session_renewal_count += 1
+      attempts = options.delete(:attempts) || 2
+
       args = {:params => params.merge(:ticket => @ticket)}.merge(options)
       args[:connection] ||= build_connection
-      CheckoutRu.make_request "/service/checkout/#{service}", args
-    rescue Faraday::Error::ClientError => e
-      if CheckoutRu.auto_renew_session &&
-        session_renewal_count < 2 && expired_ticket_exception?(e)
+      response = CheckoutRu.make_request "/service/checkout/#{service}", args
+
+      if expired_ticket?(response) && attempts > 0
         @ticket = CheckoutRu.get_ticket
-        retry
+        get(service, params, options.merge(attempts: attempts - 1))
       else
-        raise
+        response
       end
     end
 
@@ -63,11 +58,10 @@ module CheckoutRu
       @connection ||= CheckoutRu.build_connection
     end
 
-    def expired_ticket_exception?(exception)
-      exception.respond_to?(:response) &&
-        exception.response.respond_to?(:[]) &&
-        TICKET_ERROR_RESPONSE_STATUSES.include?(exception.response[:status]) &&
-        exception.response[:body].force_encoding('utf-8') =~
+    def expired_ticket?(response)
+      response[:error] &&
+        response[:error_code] == INVALID_TICKET_RESPONSE_CODE &&
+        response[:error_message].force_encoding('utf-8') =~
           INVALID_TICKET_RESPONSE_MATCHER
     end
   end
