@@ -69,7 +69,7 @@ module CheckoutRu
         msg = "Error code: #{parsed_response[:error_code]}." \
           "Error message: #{parsed_response[:error_message]}"
 
-        raise CheckoutRuError, msg
+        raise Error, msg
       end
 
       parsed_response
