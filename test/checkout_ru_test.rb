@@ -56,7 +56,7 @@ class CheckoutRuTest < MiniTest::Test
 
   def test_get_ticket_with_invalid_api_key_returns_nil
     VCR.use_cassette('get_ticket_invalid_api_key') do
-      assert_equal CheckoutRu.get_ticket(:api_key => 'invalid-api-key'), nil
+      assert_nil CheckoutRu.get_ticket(:api_key => 'invalid-api-key')
     end
   end
 
@@ -117,7 +117,7 @@ class CheckoutRuTest < MiniTest::Test
       assert_equal '33195', response.order.id
       assert_equal Date.parse('2014-10-07'), response.order.date
       assert_equal 1320.0, response.order.total_cost
-      assert_equal nil, response.order.approximate_delivery_date
+      assert_nil response.order.approximate_delivery_date
 
       assert_equal 'Ольга Суржик', response.user.fullname
       assert_equal 'г. Великий Новгород (Новгородская область)',

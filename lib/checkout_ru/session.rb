@@ -44,13 +44,25 @@ module CheckoutRu
 
       args = {:params => params.merge(:ticket => @ticket)}.merge(options)
       args[:connection] ||= build_connection
-      response = CheckoutRu.make_request "/service/checkout/#{service}", args
+      parsed_response =
+        CheckoutRu.make_request "/service/checkout/#{service}", args
 
-      if expired_ticket?(response) && attempts > 0
+      if CheckoutRu.auto_renew_session &&
+          expired_ticket?(parsed_response) && attempts > 0
+
         @ticket = CheckoutRu.get_ticket
         get(service, params, options.merge(attempts: attempts - 1))
       else
-        response
+        parsed_response
+      end
+    rescue Faraday::Error::ClientError => e
+      if CheckoutRu.auto_renew_session &&
+        attempts > 0 && expired_ticket_exception?(e)
+
+        @ticket = CheckoutRu.get_ticket
+        get(service, params, options.merge(attempts: attempts - 1))
+      else
+        raise
       end
     end
 
