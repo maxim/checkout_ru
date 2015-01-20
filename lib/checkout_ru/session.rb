@@ -2,8 +2,10 @@ module CheckoutRu
   class Session
     # Checkout.ru changed (broke) invalid ticket responses a few times. This
     # matcher reflects all varieties of them.
-    INVALID_TICKET_RESPONSE_MATCHER = /is\s+expired\s+or\s+invalid/x.freeze
     INVALID_TICKET_RESPONSE_CODE = 3
+    INVALID_TICKET_RESPONSE_MATCHER = /is\s+expired\s+or\s+invalid/x.freeze
+    INVALID_TICKET_ERROR_RESPONSE_STATUS = 500
+    INVALID_TICKET_ERROR_RESPONSE_MATCHER = /Сервис\s+временно\s+не\s+доступен/x.freeze
 
     class << self
       def initiate
@@ -44,25 +46,18 @@ module CheckoutRu
 
       args = {:params => params.merge(:ticket => @ticket)}.merge(options)
       args[:connection] ||= build_connection
-      parsed_response =
+      response_object =
         CheckoutRu.make_request "/service/checkout/#{service}", args
-
-      if CheckoutRu.auto_renew_session &&
-          expired_ticket?(parsed_response) && attempts > 0
-
-        @ticket = CheckoutRu.get_ticket
-        get(service, params, options.merge(attempts: attempts - 1))
-      else
-        parsed_response
-      end
     rescue Faraday::Error::ClientError => e
+      response_object = e.response if exception.respond_to?(:response)
+    ensure
       if CheckoutRu.auto_renew_session &&
-        attempts > 0 && expired_ticket_exception?(e)
+        attempts > 0 && expired_ticket?(response_object)
 
         @ticket = CheckoutRu.get_ticket
         get(service, params, options.merge(attempts: attempts - 1))
       else
-        raise
+        e.present? ? raise : return(parsed_response)
       end
     end
 
@@ -70,11 +65,14 @@ module CheckoutRu
       @connection ||= CheckoutRu.build_connection
     end
 
-    def expired_ticket?(response)
-      response[:error] &&
-        response[:error_code] == INVALID_TICKET_RESPONSE_CODE &&
-        response[:error_message].force_encoding('utf-8') =~
-          INVALID_TICKET_RESPONSE_MATCHER
+    def expired_ticket?(response_object)
+      response_object && ((response_object[:error] &&
+        response_object[:error_code] == INVALID_TICKET_RESPONSE_CODE &&
+        response_object[:error_message].force_encoding('utf-8') =~
+          INVALID_TICKET_RESPONSE_MATCHER) ||
+        (response_object[:status] == INVALID_TICKET_ERROR_RESPONSE_STATUS &&
+        response_object[:body].force_encoding('utf-8') =~
+          INVALID_TICKET_ERROR_RESPONSE_MATCHER))
     end
   end
 end
