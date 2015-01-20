@@ -51,7 +51,9 @@ module CheckoutRu
         parsed_response =
           CheckoutRu.make_request "/service/checkout/#{service}", args
       rescue Faraday::Error::ClientError => e
-        parsed_response = e[:response] if e.respond_to?(:response)
+        parsed_response = e.response if e.respond_to?(:response) &&
+          e.response.respond_to?(:[])
+
         raise unless expired_ticket?(parsed_response)
       end
 
