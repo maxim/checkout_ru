@@ -2,251 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: http://platform.checkout.ru/service/checkout/getPlacesByQuery?place=%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&ticket=8073f7021413f89750a3924e529e301d
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.9
-      Accept:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      server:
-      - nginx/1.7.7
-      date:
-      - Fri, 16 Jan 2015 19:23:28 GMT
-      content-type:
-      - application/json;charset=UTF-8
-      transfer-encoding:
-      - chunked
-      connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"suggestions":[{"id":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","name":"Москва","fullName":"г.
-        Москва"},{"id":"f1c72b9d-a2d7-45b7-b9f5-2222c12d5164","name":"Москва","fullName":"д.
-        Москва (Верхошижемский район, Кировская область)"},{"id":"3605e660-e90e-47d3-b58e-068f24e68145","name":"Москва","fullName":"д.
-        Москва (Пеновский район, Тверская область)"},{"id":"26a25efa-4f63-4d4b-8db6-dfc29cdaab24","name":"Москва","fullName":"д.
-        Москва (Порховский район, Псковская область)"}]}'
-    http_version: 
-  recorded_at: Fri, 16 Jan 2015 19:23:28 GMT
-- request:
-    method: get
-    uri: http://platform.checkout.ru/service/checkout/getPlacesByQuery?place=%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&ticket=06cff72887e900dadaa5829780ef4dca
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.9
-      Accept:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      server:
-      - nginx/1.7.7
-      date:
-      - Fri, 16 Jan 2015 19:26:22 GMT
-      content-type:
-      - application/json;charset=UTF-8
-      transfer-encoding:
-      - chunked
-      connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"suggestions":[{"id":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","name":"Москва","fullName":"г.
-        Москва"},{"id":"f1c72b9d-a2d7-45b7-b9f5-2222c12d5164","name":"Москва","fullName":"д.
-        Москва (Верхошижемский район, Кировская область)"},{"id":"3605e660-e90e-47d3-b58e-068f24e68145","name":"Москва","fullName":"д.
-        Москва (Пеновский район, Тверская область)"},{"id":"26a25efa-4f63-4d4b-8db6-dfc29cdaab24","name":"Москва","fullName":"д.
-        Москва (Порховский район, Псковская область)"}]}'
-    http_version: 
-  recorded_at: Fri, 16 Jan 2015 19:26:22 GMT
-- request:
-    method: get
-    uri: http://platform.checkout.ru/service/checkout/getPlacesByQuery?place=%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&ticket=c3fba7a8b6f59b4a3237ba2ab5ecfa26
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.9
-      Accept:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      server:
-      - nginx/1.7.7
-      date:
-      - Fri, 16 Jan 2015 20:03:27 GMT
-      content-type:
-      - application/json;charset=UTF-8
-      transfer-encoding:
-      - chunked
-      connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"suggestions":[{"id":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","name":"Москва","fullName":"г.
-        Москва"},{"id":"f1c72b9d-a2d7-45b7-b9f5-2222c12d5164","name":"Москва","fullName":"д.
-        Москва (Верхошижемский район, Кировская область)"},{"id":"3605e660-e90e-47d3-b58e-068f24e68145","name":"Москва","fullName":"д.
-        Москва (Пеновский район, Тверская область)"},{"id":"26a25efa-4f63-4d4b-8db6-dfc29cdaab24","name":"Москва","fullName":"д.
-        Москва (Порховский район, Псковская область)"}]}'
-    http_version: 
-  recorded_at: Fri, 16 Jan 2015 20:03:27 GMT
-- request:
-    method: get
-    uri: http://platform.checkout.ru/service/checkout/getPlacesByQuery?place=%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&ticket=7a9176c7778518759bfe7bc9f6fecc94
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.9
-      Accept:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      server:
-      - nginx/1.7.7
-      date:
-      - Fri, 16 Jan 2015 20:06:23 GMT
-      content-type:
-      - application/json;charset=UTF-8
-      transfer-encoding:
-      - chunked
-      connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"suggestions":[{"id":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","name":"Москва","fullName":"г.
-        Москва"},{"id":"f1c72b9d-a2d7-45b7-b9f5-2222c12d5164","name":"Москва","fullName":"д.
-        Москва (Верхошижемский район, Кировская область)"},{"id":"3605e660-e90e-47d3-b58e-068f24e68145","name":"Москва","fullName":"д.
-        Москва (Пеновский район, Тверская область)"},{"id":"26a25efa-4f63-4d4b-8db6-dfc29cdaab24","name":"Москва","fullName":"д.
-        Москва (Порховский район, Псковская область)"}]}'
-    http_version: 
-  recorded_at: Fri, 16 Jan 2015 20:06:23 GMT
-- request:
-    method: get
-    uri: http://platform.checkout.ru/service/checkout/getPlacesByQuery?place=%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&ticket=88149ccd9a4d1318ae9d9fbcf5ac1f41
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.9
-      Accept:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      server:
-      - nginx/1.7.7
-      date:
-      - Fri, 16 Jan 2015 20:15:07 GMT
-      content-type:
-      - application/json;charset=UTF-8
-      transfer-encoding:
-      - chunked
-      connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"suggestions":[{"id":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","name":"Москва","fullName":"г.
-        Москва"},{"id":"f1c72b9d-a2d7-45b7-b9f5-2222c12d5164","name":"Москва","fullName":"д.
-        Москва (Верхошижемский район, Кировская область)"},{"id":"3605e660-e90e-47d3-b58e-068f24e68145","name":"Москва","fullName":"д.
-        Москва (Пеновский район, Тверская область)"},{"id":"26a25efa-4f63-4d4b-8db6-dfc29cdaab24","name":"Москва","fullName":"д.
-        Москва (Порховский район, Псковская область)"}]}'
-    http_version: 
-  recorded_at: Fri, 16 Jan 2015 20:15:07 GMT
-- request:
-    method: get
-    uri: http://platform.checkout.ru/service/checkout/getPlacesByQuery?place=%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&ticket=8edaf0552e8b4880cf5ae21e142fb21d
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.9
-      Accept:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      server:
-      - nginx/1.7.7
-      date:
-      - Fri, 16 Jan 2015 20:15:22 GMT
-      content-type:
-      - application/json;charset=UTF-8
-      transfer-encoding:
-      - chunked
-      connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"suggestions":[{"id":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","name":"Москва","fullName":"г.
-        Москва"},{"id":"f1c72b9d-a2d7-45b7-b9f5-2222c12d5164","name":"Москва","fullName":"д.
-        Москва (Верхошижемский район, Кировская область)"},{"id":"3605e660-e90e-47d3-b58e-068f24e68145","name":"Москва","fullName":"д.
-        Москва (Пеновский район, Тверская область)"},{"id":"26a25efa-4f63-4d4b-8db6-dfc29cdaab24","name":"Москва","fullName":"д.
-        Москва (Порховский район, Псковская область)"}]}'
-    http_version: 
-  recorded_at: Fri, 16 Jan 2015 20:15:22 GMT
-- request:
-    method: get
-    uri: http://platform.checkout.ru/service/checkout/getPlacesByQuery?place=%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&ticket=0687bdd59d05f71ae4c8731f5728e0ef
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.9
-      Accept:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      server:
-      - nginx/1.7.7
-      date:
-      - Fri, 16 Jan 2015 20:17:17 GMT
-      content-type:
-      - application/json;charset=UTF-8
-      transfer-encoding:
-      - chunked
-      connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"suggestions":[{"id":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","name":"Москва","fullName":"г.
-        Москва"},{"id":"f1c72b9d-a2d7-45b7-b9f5-2222c12d5164","name":"Москва","fullName":"д.
-        Москва (Верхошижемский район, Кировская область)"},{"id":"3605e660-e90e-47d3-b58e-068f24e68145","name":"Москва","fullName":"д.
-        Москва (Пеновский район, Тверская область)"},{"id":"26a25efa-4f63-4d4b-8db6-dfc29cdaab24","name":"Москва","fullName":"д.
-        Москва (Порховский район, Псковская область)"}]}'
-    http_version: 
-  recorded_at: Fri, 16 Jan 2015 20:17:17 GMT
-- request:
-    method: get
     uri: http://platform.checkout.ru/service/checkout/getPlacesByQuery?place=%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&ticket=tests-will-autorequest-a-valid-ticket
     body:
       encoding: US-ASCII
@@ -264,7 +19,7 @@ http_interactions:
       server:
       - nginx/1.7.7
       date:
-      - Fri, 16 Jan 2015 20:25:44 GMT
+      - Wed, 21 Jan 2015 15:02:36 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -276,7 +31,7 @@ http_interactions:
       string: '{"error":true,"errorCode":3,"errorMessage":"ticket: ticket is expired
         or invalid; "}'
     http_version: 
-  recorded_at: Fri, 16 Jan 2015 20:25:44 GMT
+  recorded_at: Wed, 21 Jan 2015 15:02:36 GMT
 - request:
     method: get
     uri: http://platform.checkout.ru/service/login/ticket/valid-api-key
@@ -296,21 +51,22 @@ http_interactions:
       server:
       - nginx/1.7.7
       date:
-      - Fri, 16 Jan 2015 20:25:45 GMT
+      - Wed, 21 Jan 2015 15:02:36 GMT
       content-type:
       - application/json;charset=UTF-8
       content-length:
-      - '79'
+      - '113'
       connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"ticket":"514326b0e1f3cf8f57d8b2e4bacfae1e", "receiverEmailNotRequired":false}'
+      string: '{"ticket":"50f6073bc02b2ef2335c726d2fb281b1", "receiverEmailNotRequired":"false",
+        "isCashOnDeliveryOnly":"false"}'
     http_version: 
-  recorded_at: Fri, 16 Jan 2015 20:25:45 GMT
+  recorded_at: Wed, 21 Jan 2015 15:02:36 GMT
 - request:
     method: get
-    uri: http://platform.checkout.ru/service/checkout/getPlacesByQuery?place=%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&ticket=514326b0e1f3cf8f57d8b2e4bacfae1e
+    uri: http://platform.checkout.ru/service/checkout/getPlacesByQuery?place=%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&ticket=50f6073bc02b2ef2335c726d2fb281b1
     body:
       encoding: US-ASCII
       string: ''
@@ -327,7 +83,7 @@ http_interactions:
       server:
       - nginx/1.7.7
       date:
-      - Fri, 16 Jan 2015 20:25:45 GMT
+      - Wed, 21 Jan 2015 15:02:36 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -342,5 +98,5 @@ http_interactions:
         Москва (Пеновский район, Тверская область)"},{"id":"26a25efa-4f63-4d4b-8db6-dfc29cdaab24","name":"Москва","fullName":"д.
         Москва (Порховский район, Псковская область)"}]}'
     http_version: 
-  recorded_at: Fri, 16 Jan 2015 20:25:45 GMT
+  recorded_at: Wed, 21 Jan 2015 15:02:36 GMT
 recorded_with: VCR 2.9.3

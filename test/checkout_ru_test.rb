@@ -28,7 +28,7 @@ class CheckoutRuTest < MiniTest::Test
       :user => CheckoutRu::User.new(
         :fullname => 'Test Order',
         :email    => 'testorder@example.com',
-        :phone    => '555'
+        :phone    => '+79876543210'
       ),
 
       :comment => 'TEST ORDER',

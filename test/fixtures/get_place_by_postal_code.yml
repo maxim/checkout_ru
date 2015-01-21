@@ -2,230 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: http://platform.checkout.ru/service/checkout/getPlaceByPostalCode?postIndex=111524&ticket=ca232bde07fa501f6c5ad80ef8ff4a59
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.9
-      Accept:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      server:
-      - nginx/1.7.7
-      date:
-      - Fri, 16 Jan 2015 19:23:43 GMT
-      content-type:
-      - application/json;charset=UTF-8
-      transfer-encoding:
-      - chunked
-      connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"id":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","name":"Москва","fullName":"г.
-        Москва"}'
-    http_version: 
-  recorded_at: Fri, 16 Jan 2015 19:23:43 GMT
-- request:
-    method: get
-    uri: http://platform.checkout.ru/service/checkout/getPlaceByPostalCode?postIndex=111524&ticket=d8fee036a6c5a43a64dea3149b166c26
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.9
-      Accept:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      server:
-      - nginx/1.7.7
-      date:
-      - Fri, 16 Jan 2015 19:26:22 GMT
-      content-type:
-      - application/json;charset=UTF-8
-      transfer-encoding:
-      - chunked
-      connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"id":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","name":"Москва","fullName":"г.
-        Москва"}'
-    http_version: 
-  recorded_at: Fri, 16 Jan 2015 19:26:22 GMT
-- request:
-    method: get
-    uri: http://platform.checkout.ru/service/checkout/getPlaceByPostalCode?postIndex=111524&ticket=769bfcff6603353835435c3e474adc27
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.9
-      Accept:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      server:
-      - nginx/1.7.7
-      date:
-      - Fri, 16 Jan 2015 20:03:28 GMT
-      content-type:
-      - application/json;charset=UTF-8
-      transfer-encoding:
-      - chunked
-      connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"id":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","name":"Москва","fullName":"г.
-        Москва"}'
-    http_version: 
-  recorded_at: Fri, 16 Jan 2015 20:03:28 GMT
-- request:
-    method: get
-    uri: http://platform.checkout.ru/service/checkout/getPlaceByPostalCode?postIndex=111524&ticket=111dc21892587edaad8a2a5e85d2f2fc
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.9
-      Accept:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      server:
-      - nginx/1.7.7
-      date:
-      - Fri, 16 Jan 2015 20:06:26 GMT
-      content-type:
-      - application/json;charset=UTF-8
-      transfer-encoding:
-      - chunked
-      connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"id":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","name":"Москва","fullName":"г.
-        Москва"}'
-    http_version: 
-  recorded_at: Fri, 16 Jan 2015 20:06:26 GMT
-- request:
-    method: get
-    uri: http://platform.checkout.ru/service/checkout/getPlaceByPostalCode?postIndex=111524&ticket=bdb7549d9861ea2669970eeae83386b6
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.9
-      Accept:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      server:
-      - nginx/1.7.7
-      date:
-      - Fri, 16 Jan 2015 20:15:08 GMT
-      content-type:
-      - application/json;charset=UTF-8
-      transfer-encoding:
-      - chunked
-      connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"id":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","name":"Москва","fullName":"г.
-        Москва"}'
-    http_version: 
-  recorded_at: Fri, 16 Jan 2015 20:15:08 GMT
-- request:
-    method: get
-    uri: http://platform.checkout.ru/service/checkout/getPlaceByPostalCode?postIndex=111524&ticket=0afe56ec18eb2a58073391b30a970912
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.9
-      Accept:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      server:
-      - nginx/1.7.7
-      date:
-      - Fri, 16 Jan 2015 20:15:23 GMT
-      content-type:
-      - application/json;charset=UTF-8
-      transfer-encoding:
-      - chunked
-      connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"id":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","name":"Москва","fullName":"г.
-        Москва"}'
-    http_version: 
-  recorded_at: Fri, 16 Jan 2015 20:15:23 GMT
-- request:
-    method: get
-    uri: http://platform.checkout.ru/service/checkout/getPlaceByPostalCode?postIndex=111524&ticket=cacbbd6f7e96edda0d43f42b20102c74
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.9
-      Accept:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      server:
-      - nginx/1.7.7
-      date:
-      - Fri, 16 Jan 2015 20:17:16 GMT
-      content-type:
-      - application/json;charset=UTF-8
-      transfer-encoding:
-      - chunked
-      connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"id":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","name":"Москва","fullName":"г.
-        Москва"}'
-    http_version: 
-  recorded_at: Fri, 16 Jan 2015 20:17:16 GMT
-- request:
-    method: get
     uri: http://platform.checkout.ru/service/checkout/getPlaceByPostalCode?postIndex=111524&ticket=tests-will-autorequest-a-valid-ticket
     body:
       encoding: US-ASCII
@@ -243,7 +19,7 @@ http_interactions:
       server:
       - nginx/1.7.7
       date:
-      - Fri, 16 Jan 2015 20:25:48 GMT
+      - Wed, 21 Jan 2015 15:02:35 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -255,7 +31,7 @@ http_interactions:
       string: '{"error":true,"errorCode":3,"errorMessage":"ticket: ticket is expired
         or invalid; "}'
     http_version: 
-  recorded_at: Fri, 16 Jan 2015 20:25:48 GMT
+  recorded_at: Wed, 21 Jan 2015 15:02:35 GMT
 - request:
     method: get
     uri: http://platform.checkout.ru/service/login/ticket/valid-api-key
@@ -275,21 +51,22 @@ http_interactions:
       server:
       - nginx/1.7.7
       date:
-      - Fri, 16 Jan 2015 20:25:48 GMT
+      - Wed, 21 Jan 2015 15:02:36 GMT
       content-type:
       - application/json;charset=UTF-8
       content-length:
-      - '79'
+      - '113'
       connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"ticket":"caf2294289b169f4b6b61c07f80cf7aa", "receiverEmailNotRequired":false}'
+      string: '{"ticket":"5a9a1ce9585a9f1a1efde6bb3c72982f", "receiverEmailNotRequired":"false",
+        "isCashOnDeliveryOnly":"false"}'
     http_version: 
-  recorded_at: Fri, 16 Jan 2015 20:25:48 GMT
+  recorded_at: Wed, 21 Jan 2015 15:02:36 GMT
 - request:
     method: get
-    uri: http://platform.checkout.ru/service/checkout/getPlaceByPostalCode?postIndex=111524&ticket=caf2294289b169f4b6b61c07f80cf7aa
+    uri: http://platform.checkout.ru/service/checkout/getPlaceByPostalCode?postIndex=111524&ticket=5a9a1ce9585a9f1a1efde6bb3c72982f
     body:
       encoding: US-ASCII
       string: ''
@@ -306,7 +83,7 @@ http_interactions:
       server:
       - nginx/1.7.7
       date:
-      - Fri, 16 Jan 2015 20:25:48 GMT
+      - Wed, 21 Jan 2015 15:02:36 GMT
       content-type:
       - application/json;charset=UTF-8
       transfer-encoding:
@@ -318,5 +95,5 @@ http_interactions:
       string: '{"id":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","name":"Москва","fullName":"г.
         Москва"}'
     http_version: 
-  recorded_at: Fri, 16 Jan 2015 20:25:48 GMT
+  recorded_at: Wed, 21 Jan 2015 15:02:36 GMT
 recorded_with: VCR 2.9.3
