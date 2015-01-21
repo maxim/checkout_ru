@@ -1,3 +1,7 @@
+## 0.5.0
+
+- Support new JSON errors (includes support for JSON expired-ticket response)
+
 ## 0.4.2
 
 - Support street property in Address (undocumented in 1.3 API, but legal to use)
