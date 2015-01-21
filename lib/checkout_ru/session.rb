@@ -1,11 +1,26 @@
 module CheckoutRu
   class Session
-    # Checkout.ru changed (broke) invalid ticket responses a few times. This
-    # matcher reflects all varieties of them.
-    INVALID_TICKET_RESPONSE_CODE = 3
-    INVALID_TICKET_RESPONSE_MATCHER = /is\s+expired\s+or\s+invalid/x.freeze
-    INVALID_TICKET_ERROR_RESPONSE_STATUS = 500
-    INVALID_TICKET_ERROR_RESPONSE_MATCHER = /Сервис\s+временно\s+не\s+доступен/x.freeze
+    # Checkout.ru changed (broke) invalid ticket responses a few times. These
+    # hashes reflect various ways we've seen up to date that ticket can expire.
+    EXPIRED_TICKET_MATCHERS = [
+      # the new JSON errors
+      lambda { |r|
+        r[:error] &&
+          r[:error_code] == 3 &&
+          r[:error_message] =~ /is\s+expired\s+or\s+invalid/
+      },
+
+      # before JSON errors were introduced
+      lambda { |r|
+        [400, 500].include?(r[:status]) &&
+          r[:body] =~ /is\s+expired\s+or\s+invalid/
+      },
+
+      # broken style as of 10-06-14
+      lambda { |r|
+        r[:status] == 500 && r[:body] =~ /Сервис\s+временно\s+не\s+доступен/
+      }
+    ].freeze
 
     class << self
       def initiate
@@ -66,7 +81,7 @@ module CheckoutRu
       end
 
       if parsed_response[:error]
-        msg = "Error code: #{parsed_response[:error_code]}." \
+        msg = "Error code: #{parsed_response[:error_code]}. "\
           "Error message: #{parsed_response[:error_message]}"
 
         raise Error, msg
@@ -80,13 +95,9 @@ module CheckoutRu
     end
 
     def expired_ticket?(parsed_response)
-      parsed_response && ((parsed_response[:error] &&
-        parsed_response[:error_code] == INVALID_TICKET_RESPONSE_CODE &&
-        parsed_response[:error_message].force_encoding('utf-8') =~
-          INVALID_TICKET_RESPONSE_MATCHER) ||
-        (parsed_response[:status] == INVALID_TICKET_ERROR_RESPONSE_STATUS &&
-        parsed_response[:body].force_encoding('utf-8') =~
-          INVALID_TICKET_ERROR_RESPONSE_MATCHER))
+      parsed_response && EXPIRED_TICKET_MATCHERS.any? do |matcher|
+        matcher.call(parsed_response)
+      end
     end
   end
 end
