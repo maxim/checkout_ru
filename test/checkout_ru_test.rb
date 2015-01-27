@@ -71,8 +71,6 @@ class CheckoutRuTest < MiniTest::Test
     end
   end
 
-  # Test is broken. Request on update returns error status without description.
-  #    Must be discussed in skype with support.
   def test_update_order
     VCR.use_cassette('update_order') do
       id = create_order
