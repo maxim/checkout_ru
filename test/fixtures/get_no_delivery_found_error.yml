@@ -1,0 +1,103 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/checkout/calculation?placeId=b0122c31-eb1c-40ae-b998-08f9e99a0fa1&totalSum=1500&assessedSum=2000&itemsCount=2&totalWeight=1&ticket=tests-will-autorequest-a-valid-ticket
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Wed, 28 Jan 2015 00:46:24 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+      set-cookie:
+      - JSESSIONID=B7124F28808555872014EE6D7E9BAF26.srv100; Path=/; HttpOnly
+    body:
+      encoding: UTF-8
+      string: '{"error":true,"errorCode":3,"errorMessage":"ticket: ticket is expired
+        or invalid; "}'
+    http_version: 
+  recorded_at: Wed, 28 Jan 2015 00:46:24 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/login/ticket/valid-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Wed, 28 Jan 2015 00:46:24 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      content-length:
+      - '113'
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"ticket":"211e40247d084107eedfcf4ebc5fffb8", "receiverEmailNotRequired":"false",
+        "isCashOnDeliveryOnly":"false"}'
+    http_version: 
+  recorded_at: Wed, 28 Jan 2015 00:46:25 GMT
+- request:
+    method: get
+    uri: http://platform.checkout.ru/service/checkout/calculation?placeId=b0122c31-eb1c-40ae-b998-08f9e99a0fa1&totalSum=1500&assessedSum=2000&itemsCount=2&totalWeight=1&ticket=211e40247d084107eedfcf4ebc5fffb8
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.7.7
+      date:
+      - Wed, 28 Jan 2015 00:46:25 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+      set-cookie:
+      - JSESSIONID=0367069015CE5D427494A3220B42CE5D.srv100; Path=/; HttpOnly
+    body:
+      encoding: UTF-8
+      string: '{"error":true,"errorCode":4,"errorMessage":"no delivery found for place
+        specified"}'
+    http_version: 
+  recorded_at: Wed, 28 Jan 2015 00:46:25 GMT
+recorded_with: VCR 2.9.0

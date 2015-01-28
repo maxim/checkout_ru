@@ -85,4 +85,18 @@ class CheckoutRu::SessionTest < MiniTest::Test
       assert_equal 'г. Москва', place.full_name
     end
   end
+
+  def test_get_no_delivery_found_error
+    VCR.use_cassette('get_no_delivery_found_error') do
+      assert_raises(CheckoutRu::NoDeliveryFoundError) do
+        @session.calculation(
+          :place_id     => 'b0122c31-eb1c-40ae-b998-08f9e99a0fa1',
+          :total_sum    => 1500,
+          :assessed_sum => 2000,
+          :items_count  => 2,
+          :total_weight => 1
+        )
+      end
+    end
+  end
 end
