@@ -1,27 +1,7 @@
+require 'checkout_ru/expired_ticket_response'
+
 module CheckoutRu
   class Session
-    # Checkout.ru changed (broke) invalid ticket responses a few times. These
-    # hashes reflect various ways we've seen up to date that ticket can expire.
-    EXPIRED_TICKET_MATCHERS = [
-      # the new JSON errors
-      lambda { |r|
-        r[:error] &&
-          r[:error_code] == 3 &&
-          r[:error_message] =~ /is\s+expired\s+or\s+invalid/
-      },
-
-      # before JSON errors were introduced
-      lambda { |r|
-        [400, 500].include?(r[:status]) &&
-          r[:body] =~ /is\s+expired\s+or\s+invalid/
-      },
-
-      # broken style as of 10-06-14
-      lambda { |r|
-        r[:status] == 500 && r[:body] =~ /Сервис\s+временно\s+не\s+доступен/
-      }
-    ].freeze
-
     class << self
       def initiate
         ticket = CheckoutRu.get_ticket
@@ -95,9 +75,7 @@ module CheckoutRu
     end
 
     def expired_ticket?(parsed_response)
-      parsed_response && EXPIRED_TICKET_MATCHERS.any? do |matcher|
-        matcher.call(parsed_response)
-      end
+      ExpiredTicketResponse.new(parsed_response).match?
     end
   end
 end
