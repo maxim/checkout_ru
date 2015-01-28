@@ -5,7 +5,9 @@ require 'vcr'
 require 'cgi'
 
 REAL_API_KEY = ENV['CHECKOUT_RU_API_KEY']
-CheckoutRu.api_key = ENV['CHECKOUT_RU_API_KEY'] || 'valid-api-key'
+FAKE_API_KEY = 'valid-api-key'
+
+CheckoutRu.api_key = REAL_API_KEY || FAKE_API_KEY
 CheckoutRu.auto_renew_session = true
 
 VCR.configure do |c|
@@ -13,7 +15,7 @@ VCR.configure do |c|
   c.hook_into :faraday
 
   if REAL_API_KEY
-    c.filter_sensitive_data('valid-api-key') { CheckoutRu.api_key }
+    c.filter_sensitive_data(FAKE_API_KEY) { REAL_API_KEY }
   end
 
   c.before_record do |i|
