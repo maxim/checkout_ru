@@ -11,7 +11,6 @@ require 'checkout_ru/order'
 
 module CheckoutRu
   SERVICE_URL = 'http://platform.checkout.ru'.freeze
-  Error = Class.new(RuntimeError)
 
   class << self
     attr_accessor \

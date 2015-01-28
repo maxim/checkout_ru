@@ -1,4 +1,5 @@
 require 'checkout_ru/expired_ticket_response'
+require 'checkout_ru/error'
 
 module CheckoutRu
   class Session
@@ -61,10 +62,7 @@ module CheckoutRu
       end
 
       if parsed_response[:error]
-        msg = "Error code: #{parsed_response[:error_code]}. "\
-          "Error message: #{parsed_response[:error_message]}"
-
-        raise Error, msg
+        raise Error.construct(parsed_response)
       end
 
       parsed_response

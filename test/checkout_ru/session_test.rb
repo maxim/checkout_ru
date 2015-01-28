@@ -88,7 +88,7 @@ class CheckoutRu::SessionTest < MiniTest::Test
 
   def test_get_no_delivery_found_error
     VCR.use_cassette('get_no_delivery_found_error') do
-      assert_raises(CheckoutRu::NoDeliveryFoundError) do
+      error = assert_raises(CheckoutRu::NoDeliveryFoundError) do
         @session.calculation(
           :place_id     => 'b0122c31-eb1c-40ae-b998-08f9e99a0fa1',
           :total_sum    => 1500,
@@ -97,6 +97,10 @@ class CheckoutRu::SessionTest < MiniTest::Test
           :total_weight => 1
         )
       end
+
+      assert_equal 4, error.code
+      assert_match /no delivery found/, error.message
+      assert_match /code 4/, error.message
     end
   end
 end
