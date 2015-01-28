@@ -1,3 +1,10 @@
+## 0.5.1
+
+- Support for first specialized error: CheckoutRu::NoDeliveryFoundError.
+  It's descendant from CheckoutRu::Error so doesn't break existing rescue code.
+  It's raised when checkout.ru has no delivery for certain settlement id.
+- All CheckoutRu::Error exceptions now have `code` attribute
+
 ## 0.5.0
 
 - Support new JSON errors (includes support for JSON expired-ticket response)
