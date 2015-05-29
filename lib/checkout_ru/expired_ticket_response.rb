@@ -1,3 +1,5 @@
+# coding: utf-8
+
 module CheckoutRu
   class ExpiredTicketResponse
     attr_reader :response
