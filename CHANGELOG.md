@@ -1,3 +1,7 @@
+## 0.6.0
+
+- Start using Faraday 0.9.1 (up from 0.8.9)
+
 ## 0.5.1
 
 - Support for first specialized error: CheckoutRu::NoDeliveryFoundError.
