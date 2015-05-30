@@ -126,7 +126,8 @@ class CheckoutRuTest < MiniTest::Test
       assert_equal 'SPSR', response.delivery_name
 
       assert_equal 4, response.delivery_history.size
-      assert_equal 'Москва - Хранилище неперерегистрированного', response.delivery_history[0].status
+      assert_equal 'Москва - Хранилище неперерегистрированного',
+        response.delivery_history[0].status
       assert_equal '07.10.2014 17:01:00', response.delivery_history[0].date
     end
   end
