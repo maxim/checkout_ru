@@ -12,7 +12,12 @@ CheckoutRu.auto_renew_session = true
 
 VCR.configure do |c|
   c.cassette_library_dir = 'test/fixtures'
-  c.hook_into :faraday
+
+  # Typically we'd hook into :faraday here, since that's what checkout_ru uses,
+  # but due to an issue we must use a workaround, hook directly into underlying
+  # library (webmock). Issue also referred to in checkout_ru.gemspec.
+  # https://github.com/vcr/vcr/issues/386
+  c.hook_into :webmock
 
   if REAL_API_KEY
     c.filter_sensitive_data(FAKE_API_KEY) { REAL_API_KEY }

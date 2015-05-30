@@ -30,4 +30,9 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'minitest', '~> 5.2'
   spec.add_development_dependency 'vcr', '~> 2.8'
   spec.add_development_dependency 'mocha', '~> 1.0'
+
+  # Temporary spec dependency due to bug in Faraday 0.9.x. Also referred to from
+  # test/test_helper.rb:
+  # https://github.com/vcr/vcr/issues/386
+  spec.add_development_dependency 'webmock'
 end
