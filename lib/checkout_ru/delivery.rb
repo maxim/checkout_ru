@@ -8,7 +8,6 @@ module CheckoutRu
 
     property :address_express, from: :addressExpress
     property :address_pvz,     from: :addressPvz
-    property :forced_cost,     from: :forcedCost
 
     property :type,            required: true
     property :cost,            required: true
