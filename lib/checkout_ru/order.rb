@@ -10,18 +10,17 @@ module CheckoutRu
       CANCELLED_BEFORE_SHIPMENT = 'CANCELLED_BEFORE_SHIPMENT'.freeze
 
       MAP = {
-        created: CREATED,
-        cancelled_before_shipment: CANCELLED_BEFORE_SHIPMENT
+        :created => CREATED,
+        :cancelled_before_shipment => CANCELLED_BEFORE_SHIPMENT
       }.freeze
     end
 
     property :goods
-    property :delivery, required: true
-    property :user, required: true
+    property :delivery, :required => true
+    property :user, :required => true
     property :comment
-    property :shop_order_id, from: :shopOrderId
-    property :payment_method, required: true, from: :paymentMethod
-    property :forced_cost, from: :forcedCost
+    property :shop_order_id, :from => :shopOrderId
+    property :payment_method, :required => true, :from => :paymentMethod
 
     coerce_key :goods, Item
     coerce_key :delivery, Delivery
