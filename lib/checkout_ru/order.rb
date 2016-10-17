@@ -21,6 +21,7 @@ module CheckoutRu
     property :comment
     property :shop_order_id, :from => :shopOrderId
     property :payment_method, :required => true, :from => :paymentMethod
+    property :forced_cost, :from => :forcedCost
 
     coerce_key :goods, Item
     coerce_key :delivery, Delivery
