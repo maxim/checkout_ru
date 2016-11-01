@@ -34,5 +34,5 @@ Gem::Specification.new do |spec|
   # Temporary spec dependency due to bug in Faraday 0.9.x. Also referred to from
   # test/test_helper.rb:
   # https://github.com/vcr/vcr/issues/386
-  spec.add_development_dependency 'webmock'
+  spec.add_development_dependency 'webmock', '~> 1.21.0'
 end
