@@ -59,8 +59,6 @@ module CheckoutRu
     end
 
     def parse_status(status)
-      status_map = Order::Status::MAP
-
       if status.is_a?(Symbol)
         unless Order::Status::MAP.keys.include?(status)
           raise Error, "Invalid order status: #{status}"
