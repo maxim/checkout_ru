@@ -8,11 +8,12 @@ module CheckoutRu
 
     property :address_express, :from => :addressExpress
     property :address_pvz,     :from => :addressPvz
+    property :forced_cost,     :from => :forcedCost
 
-    property :type,     :required => true
-    property :cost,     :required => true
-    property :min_term, :required => true, :from => :minTerm
-    property :max_term, :required => true, :from => :maxTerm
+    property :type,            :required => true
+    property :cost,            :required => true
+    property :min_term,        :required => true, :from => :minTerm
+    property :max_term,        :required => true, :from => :maxTerm
 
     coerce_key :address_express, Address
   end
